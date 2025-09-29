@@ -34,10 +34,18 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { NavBar } from "@/components/ui/NavBar";
+import { FeaturedMovie } from "@/components/ui/Hero";
 export default function Home() {
   return (
-    <div className="flex">
+    <div className="">
       <NavBar />
+      <FeaturedMovie
+        text="Now Playing:"
+        title="Wicked"
+        
+        description="Elphaba, a misunderstood young woman because of her green skin, and Glinda, a popular girl, become friends at Shiz University in the Land of Oz. After an encounter with the Wonderful Wizard of Oz, their friendship reaches a crossroads. "
+        imageUrl="wicked.jpg"
+      />
     </div>
   );
 }
