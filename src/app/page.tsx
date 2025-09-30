@@ -14,21 +14,27 @@ import { NavBar } from "@/components/ui/NavBar";
 import { FeaturedMovie } from "@/components/ui/Hero";
 import { useState } from "react";
 
-type Movie = {
-  text: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  rating: number;
-};
-
+import { Popular } from "@/components/ui/Popular";
+import { Movie, PopularProps } from "@/lib/type";
+const PopularMovies: PopularProps[] = [
+  { title: "Hello", rating: 10, imageUrl: "wicked.jpg" },
+  { title: "HD", rating: 10, imageUrl: "wicked.jpg" },
+  { title: "Hello", rating: 10, imageUrl: "wicked.jpg" },
+  { title: "Hello", rating: 10, imageUrl: "wicked.jpg" },
+  { title: "Hello", rating: 10, imageUrl: "wicked.jpg" },
+  { title: "HD", rating: 10, imageUrl: "wicked.jpg" },
+  { title: "Hello", rating: 10, imageUrl: "wicked.jpg" },
+  { title: "Hello", rating: 10, imageUrl: "wicked.jpg" },
+  { title: "HD", rating: 10, imageUrl: "wicked.jpg" },
+  { title: "Hello", rating: 10, imageUrl: "wicked.jpg" },
+];
 const Movies: Movie[] = [
   {
     text: "Now playing",
     title: "Wicked",
     description:
       "Elphaba, a misunderstood young woman because of her green skin, and Glinda, a popular girl, become friends at Shiz University in the Land of Oz. After an encounter with the Wonderful Wizard of Oz, their friendship reaches a crossroads. ",
-    imageUrl: "wicked.jpg",
+    imageUrl: "/wicked.jpg",
     rating: 6.9,
   },
 
@@ -37,7 +43,7 @@ const Movies: Movie[] = [
     title: "Gladiator II",
     description:
       "After his home is conquered by the tyrannical emperors who now lead Rome, Lucius is forced to enter the Colosseum and must look to his past to find strength to return the glory of Rome to its people.",
-    imageUrl: "gladiator.png",
+    imageUrl: "/gladiator.png",
     rating: 7.3,
   },
 
@@ -46,10 +52,11 @@ const Movies: Movie[] = [
     title: "Moana 2",
     description:
       "After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced. ",
-    imageUrl: "kino3.jpg",
+    imageUrl: "/kino3.jpg",
     rating: 7.0,
   },
 ];
+
 export default function Home() {
   return (
     <div className="">
@@ -58,13 +65,17 @@ export default function Home() {
         <Carousel
           plugins={[
             Autoplay({
-              delay: 2000,
+              delay: 5000,
             }),
           ]}
+          opts={{
+            align: "start",
+            loop: true,
+          }}
         >
           <CarouselContent>
-            {Movies.map((movie, index) => (
-              <CarouselItem key={index}>
+            {Movies.map((movie) => (
+              <CarouselItem key={movie.title}>
                 <FeaturedMovie
                   text={movie.text}
                   title={movie.title}
@@ -75,9 +86,38 @@ export default function Home() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          {/* <CarouselPrevious />
-          <CarouselNext /> */}
         </Carousel>
+        <div className="flex gap-2 items-center justify-between ml-14 mt-10 mr-14">
+          <h1 className="text-2xl font-bold">Upcoming </h1>{" "}
+          <Button variant={"secondary"} className="flex gap-2 items-center">
+            {" "}
+            See more
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M3.33301 8.00004H12.6663M12.6663 8.00004L7.99967 3.33337M12.6663 8.00004L7.99967 12.6667"
+                stroke="#18181B"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Button>
+        </div>
+        <div className="flex flex-wrap gap-10 justify-center items-center mt-10">
+          {PopularMovies.map((movie, i) => (
+            <Popular
+              key={i}
+              title={movie.title}
+              imageUrl={movie.imageUrl}
+              rating={movie.rating}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
