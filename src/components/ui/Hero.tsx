@@ -14,19 +14,7 @@ export function FeaturedMovie(props: Props) {
           alt={title}
           className="absolute inset-0 w-full h-[600px] object-cover"
         />
-        <Button
-          variant="secondary"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 rounded-full px-3 py-2"
-        >
-          ◀
-        </Button>
 
-        <Button
-          variant="secondary"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 rounded-full px-3 py-2"
-        >
-          ▶
-        </Button>
         <div className=" relative p-8 ml-30 mt-20 text-white">
           <p className="text-2xl  mb-2">{text}</p>
           <h1 className="text-4xl font-bold">{title}</h1>

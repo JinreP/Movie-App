@@ -14,19 +14,19 @@ import { NavBar } from "@/components/ui/NavBar";
 import { FeaturedMovie } from "@/components/ui/Hero";
 import { useState } from "react";
 
-import { Popular } from "@/components/ui/Popular";
+import { Popular } from "@/components/ui/UpComing";
 import { Movie, PopularProps } from "@/lib/type";
 const PopularMovies: PopularProps[] = [
-  { title: "Hello", rating: 10, imageUrl: "wicked.jpg" },
-  { title: "HD", rating: 10, imageUrl: "wicked.jpg" },
-  { title: "Hello", rating: 10, imageUrl: "wicked.jpg" },
-  { title: "Hello", rating: 10, imageUrl: "wicked.jpg" },
-  { title: "Hello", rating: 10, imageUrl: "wicked.jpg" },
-  { title: "HD", rating: 10, imageUrl: "wicked.jpg" },
-  { title: "Hello", rating: 10, imageUrl: "wicked.jpg" },
-  { title: "Hello", rating: 10, imageUrl: "wicked.jpg" },
-  { title: "HD", rating: 10, imageUrl: "wicked.jpg" },
-  { title: "Hello", rating: 10, imageUrl: "wicked.jpg" },
+  { title: "Hello", rating: 10, imageUrl: "/wicked.jpg" },
+  { title: "HD", rating: 10, imageUrl: "/wicked.jpg" },
+  { title: "Hello", rating: 10, imageUrl: "/gladiator.png" },
+  { title: "Hello", rating: 10, imageUrl: "/kino3.jpg" },
+  { title: "HD", rating: 10, imageUrl: "/wicked.jpg" },
+  { title: "Hello", rating: 10, imageUrl: "/gladiator.png" },
+  { title: "Hello", rating: 10, imageUrl: "/kino3.jpg" },
+  { title: "HD", rating: 10, imageUrl: "/wicked.jpg" },
+  { title: "Hello", rating: 10, imageUrl: "/gladiator.png" },
+  { title: "Hello", rating: 10, imageUrl: "/kino3.jpg" },
 ];
 const Movies: Movie[] = [
   {
@@ -68,10 +68,6 @@ export default function Home() {
               delay: 5000,
             }),
           ]}
-          opts={{
-            align: "start",
-            loop: true,
-          }}
         >
           <CarouselContent>
             {Movies.map((movie) => (
@@ -86,9 +82,11 @@ export default function Home() {
               </CarouselItem>
             ))}
           </CarouselContent>
+          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10" />
+          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10" />
         </Carousel>
         <div className="flex gap-2 items-center justify-between ml-14 mt-10 mr-14">
-          <h1 className="text-2xl font-bold">Upcoming </h1>{" "}
+          <h1 className="text-2xl font-bold">Upcoming</h1>{" "}
           <Button variant={"secondary"} className="flex gap-2 items-center">
             {" "}
             See more

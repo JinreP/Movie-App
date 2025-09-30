@@ -1,10 +1,7 @@
 "use client";
 import {
   Card,
-  CardAction,
-  CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -14,16 +11,16 @@ export function Popular(Props: PopularProps) {
   const { title, imageUrl, rating } = Props;
   return (
     <div className="flex gap-2 ">
-      <Card className="w-[250px]  flex h-[439px]">
-        <CardContent>
+      <Card className="w-[250px] overflow-hidden  flex flex-col h-fit p-0">
+        <div className=" h-[340px] w-full">
           <img
             src={imageUrl}
-            className="w-[250px]  bg-contain  h-[340px]"
+            className="  w-full object-cover  h-full"
             alt={title}
           />
-        </CardContent>
+        </div>
         <CardHeader>
-          <CardDescription className="flex items-center">
+          <CardDescription className="flex  items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -42,7 +39,7 @@ export function Popular(Props: PopularProps) {
             {rating} <span className="text-gray-300">/10</span>
           </CardDescription>
 
-          <CardTitle>{title}</CardTitle>
+          <CardTitle className="mb-6">{title}</CardTitle>
         </CardHeader>
       </Card>
     </div>
