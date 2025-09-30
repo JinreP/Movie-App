@@ -34,7 +34,7 @@ export function Genres() {
     "Western",
   ];
   return (
-    <div className="flex-wrap ">
+    <div className=" flex flex-wrap w-[500px]">
       {genres.map((genre, index) => (
         <div className="flex " key={index}>
           <DropdownMenuItem key={index}>
