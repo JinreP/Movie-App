@@ -16,6 +16,7 @@ import { useState } from "react";
 
 import { Popular } from "@/components/ui/UpComing";
 import { Movie, PopularMovies, topRated, UpComing } from "@/lib/type";
+import { Footer } from "@/components/Footer";
 const Upcoming: UpComing[] = [
   { title: "Dear Santa", rating: 6.9, imageUrl: "/wicked.jpg" },
   {
@@ -232,6 +233,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
