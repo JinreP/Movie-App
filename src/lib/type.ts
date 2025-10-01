@@ -24,3 +24,9 @@ export type PopularMovies = {
   rating: number;
   imageUrl: string;
 };
+
+export type topRated = {
+  title: string;
+  rating: number;
+  imageUrl: string;
+};

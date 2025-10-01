@@ -15,7 +15,7 @@ import { FeaturedMovie } from "@/components/ui/Hero";
 import { useState } from "react";
 
 import { Popular } from "@/components/ui/UpComing";
-import { Movie, PopularMovies, UpComing } from "@/lib/type";
+import { Movie, PopularMovies, topRated, UpComing } from "@/lib/type";
 const Upcoming: UpComing[] = [
   { title: "Dear Santa", rating: 6.9, imageUrl: "/wicked.jpg" },
   {
@@ -49,9 +49,34 @@ const popularMoviesData: PopularMovies[] = [
   },
   { title: "Internstellar", rating: 6.9, imageUrl: "/gladiator.png" },
   { title: "Se7en", rating: 6.9, imageUrl: "/kino3.jpg" },
-  { title: "Solo Leveling: ReAwakening", rating: 6.9, imageUrl: "/wicked.jpg" },
-  { title: "Get Away", rating: 6.9, imageUrl: "/gladiator.png" },
-  { title: "Sonic the Hedgehog 3", rating: 6.9, imageUrl: "/kino3.jpg" },
+  { title: "It’s a Wonderful life", rating: 6.9, imageUrl: "/wicked.jpg" },
+  { title: "Seven samurai", rating: 6.9, imageUrl: "/gladiator.png" },
+  { title: "The Silence of the Lambs", rating: 6.9, imageUrl: "/kino3.jpg" },
+];
+
+const TopRated: topRated[] = [
+  { title: "Pulp Fiction", rating: 6.9, imageUrl: "/wicked.jpg" },
+  {
+    title: "The Lord of the Rings: Fellowship of the Kings",
+    rating: 6.9,
+    imageUrl: "/wicked.jpg",
+  },
+  {
+    title: "The Good, the Bad and the Ugly",
+    rating: 6.9,
+    imageUrl: "/gladiator.png",
+  },
+  { title: "Forrest Gump", rating: 6.9, imageUrl: "/kino3.jpg" },
+  {
+    title: "Fight Club",
+    rating: 6.9,
+    imageUrl: "/wicked.jpg",
+  },
+  { title: "Saving Private Ryan", rating: 6.9, imageUrl: "/gladiator.png" },
+  { title: "City of God", rating: 6.9, imageUrl: "/kino3.jpg" },
+  { title: "The Green Mile", rating: 6.9, imageUrl: "/wicked.jpg" },
+  { title: "Life is Beautiful", rating: 6.9, imageUrl: "/gladiator.png" },
+  { title: "Terminator 2: Judgement Day", rating: 6.9, imageUrl: "/kino3.jpg" },
 ];
 
 const Movies: Movie[] = [
@@ -166,6 +191,38 @@ export default function Home() {
         </div>
         <div className="flex flex-wrap gap-10 justify-center items-center mt-10">
           {popularMoviesData.map((movie, i) => (
+            <Popular
+              key={i}
+              title={movie.title}
+              imageUrl={movie.imageUrl}
+              rating={movie.rating}
+            />
+          ))}
+        </div>
+
+        <div className="flex gap-2 items-center justify-between ml-14 mt-10 mr-14">
+          <h1 className="text-2xl font-bold">Top Rated</h1>{" "}
+          <Button variant={"outline"} className="flex gap-2 items-center">
+            {" "}
+            See more
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M3.33301 8.00004H12.6663M12.6663 8.00004L7.99967 3.33337M12.6663 8.00004L7.99967 12.6667"
+                stroke="#18181B"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Button>
+        </div>
+        <div className="flex flex-wrap gap-10 justify-center items-center mt-10">
+          {TopRated.map((movie, i) => (
             <Popular
               key={i}
               title={movie.title}
