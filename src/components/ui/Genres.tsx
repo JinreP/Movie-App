@@ -1,6 +1,5 @@
 import {
   DropdownMenuItem,
-  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 
 export function Genres() {

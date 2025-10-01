@@ -1,6 +1,5 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   Carousel,
   CarouselContent,
@@ -12,7 +11,6 @@ import Autoplay from "embla-carousel-autoplay";
 
 import { NavBar } from "@/components/ui/NavBar";
 import { FeaturedMovie } from "@/components/ui/Hero";
-import { useState } from "react";
 
 import { Popular } from "@/components/ui/UpComing";
 import { Movie, PopularMovies, topRated, UpComing } from "@/lib/type";
