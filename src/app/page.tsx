@@ -15,19 +15,45 @@ import { FeaturedMovie } from "@/components/ui/Hero";
 import { useState } from "react";
 
 import { Popular } from "@/components/ui/UpComing";
-import { Movie, PopularProps } from "@/lib/type";
-const PopularMovies: PopularProps[] = [
-  { title: "Hello", rating: 10, imageUrl: "/wicked.jpg" },
-  { title: "HD", rating: 10, imageUrl: "/wicked.jpg" },
-  { title: "Hello", rating: 10, imageUrl: "/gladiator.png" },
-  { title: "Hello", rating: 10, imageUrl: "/kino3.jpg" },
-  { title: "HD", rating: 10, imageUrl: "/wicked.jpg" },
-  { title: "Hello", rating: 10, imageUrl: "/gladiator.png" },
-  { title: "Hello", rating: 10, imageUrl: "/kino3.jpg" },
-  { title: "HD", rating: 10, imageUrl: "/wicked.jpg" },
-  { title: "Hello", rating: 10, imageUrl: "/gladiator.png" },
-  { title: "Hello", rating: 10, imageUrl: "/kino3.jpg" },
+import { Movie, PopularMovies, UpComing } from "@/lib/type";
+const Upcoming: UpComing[] = [
+  { title: "Dear Santa", rating: 6.9, imageUrl: "/wicked.jpg" },
+  {
+    title: "How To Train Your Dragon Live Action",
+    rating: 6.9,
+    imageUrl: "/wicked.jpg",
+  },
+  { title: "Alien Romulus", rating: 6.9, imageUrl: "/gladiator.png" },
+  { title: "From the Ashes", rating: 6.9, imageUrl: "/kino3.jpg" },
+  { title: "Space Dogg", rating: 6.9, imageUrl: "/wicked.jpg" },
+  { title: "The Order", rating: 6.9, imageUrl: "/gladiator.png" },
+  { title: "Y2K", rating: 6.9, imageUrl: "/kino3.jpg" },
+  { title: "Solo Leveling: ReAwakening", rating: 6.9, imageUrl: "/wicked.jpg" },
+  { title: "Get Away", rating: 6.9, imageUrl: "/gladiator.png" },
+  { title: "Sonic the Hedgehog 3", rating: 6.9, imageUrl: "/kino3.jpg" },
 ];
+
+const popularMoviesData: PopularMovies[] = [
+  { title: "The Shawshank Redemption ", rating: 6.9, imageUrl: "/wicked.jpg" },
+  {
+    title: "The Godfather",
+    rating: 6.9,
+    imageUrl: "/wicked.jpg",
+  },
+  { title: "The Dark Knight", rating: 6.9, imageUrl: "/gladiator.png" },
+  { title: "12 Angry Men", rating: 6.9, imageUrl: "/kino3.jpg" },
+  {
+    title: "The Lord of the Rings: The  Return of the King",
+    rating: 6.9,
+    imageUrl: "/wicked.jpg",
+  },
+  { title: "Internstellar", rating: 6.9, imageUrl: "/gladiator.png" },
+  { title: "Se7en", rating: 6.9, imageUrl: "/kino3.jpg" },
+  { title: "Solo Leveling: ReAwakening", rating: 6.9, imageUrl: "/wicked.jpg" },
+  { title: "Get Away", rating: 6.9, imageUrl: "/gladiator.png" },
+  { title: "Sonic the Hedgehog 3", rating: 6.9, imageUrl: "/kino3.jpg" },
+];
+
 const Movies: Movie[] = [
   {
     text: "Now playing",
@@ -107,7 +133,39 @@ export default function Home() {
           </Button>
         </div>
         <div className="flex flex-wrap gap-10 justify-center items-center mt-10">
-          {PopularMovies.map((movie, i) => (
+          {Upcoming.map((movie, i) => (
+            <Popular
+              key={i}
+              title={movie.title}
+              imageUrl={movie.imageUrl}
+              rating={movie.rating}
+            />
+          ))}
+        </div>
+
+        <div className="flex gap-2 items-center justify-between ml-14 mt-10 mr-14">
+          <h1 className="text-2xl font-bold">Popular</h1>{" "}
+          <Button variant={"secondary"} className="flex gap-2 items-center">
+            {" "}
+            See more
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M3.33301 8.00004H12.6663M12.6663 8.00004L7.99967 3.33337M12.6663 8.00004L7.99967 12.6667"
+                stroke="#18181B"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Button>
+        </div>
+        <div className="flex flex-wrap gap-10 justify-center items-center mt-10">
+          {popularMoviesData.map((movie, i) => (
             <Popular
               key={i}
               title={movie.title}

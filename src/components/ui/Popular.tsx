@@ -5,9 +5,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { UpComing } from "@/lib/type";
+import { PopularMovies } from "@/lib/type";
 
-export function Popular(Props: UpComing) {
+export function Popular(Props: PopularMovies) {
   const { title, imageUrl, rating } = Props;
   return (
     <div className="flex gap-2 ">
