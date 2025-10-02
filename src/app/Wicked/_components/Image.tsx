@@ -25,6 +25,7 @@ export function Image(props: any) {
         <div className="flex items-center gap-3 absolute left-3 bottom-5">
           <Button variant={"secondary"} className="rounded-[50%] ">
             <svg
+            className=""
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -33,7 +34,8 @@ export function Image(props: any) {
             >
               <path
                 d="M3.33301 2L12.6663 8L3.33301 14V2Z"
-                stroke="black"
+                stroke="currentColor"
+                fill="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />

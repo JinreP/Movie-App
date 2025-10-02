@@ -8,7 +8,7 @@ export function Title() {
         <p className="text-gray-300">2024.11.26 · PG · 2h 40m</p>
       </div>
       <div className="flex flex-col">
-        <p className="text-black">Rating</p>
+        <p className="">Rating</p>
         <div className="flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ export function Title() {
             />
           </svg>
           <div className="flex">
-            <p className="text-black font-bold">6/9</p>
+            <p className=" font-bold">6.9</p>
             <span className="text-gray-300">/10</span>
           </div>
         </div>

@@ -37,6 +37,7 @@ export function Genres() {
           <DropdownMenuItem key={index}>
             {genre}{" "}
             <svg
+              className="text-gray-700 dark:text-white"
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -45,7 +46,8 @@ export function Genres() {
             >
               <path
                 d="M6 12L10 8L6 4"
-                stroke="#09090B"
+                stroke="currentColor"
+                fill="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
