@@ -28,7 +28,10 @@ export function NavBar() {
             strokeLinejoin="round"
           />
         </svg>
-        <p className="font-bold text-2xl text-purple-500">Movie Z</p>
+
+        <a href="http://localhost:3000/">
+          <p className="font-bold text-2xl text-purple-500">Movie Z</p>
+        </a>
       </div>
 
       <div className="flex gap-5  items-center">
@@ -70,7 +73,7 @@ export function NavBar() {
         <div className="relative">
           <Input
             type="text"
-            className="w-[500px] pl-15 bg- h-[45px]"
+            className="w-[500px] pl-15  h-[45px]"
             placeholder="Search you're movie"
           />
           <svg

@@ -1,4 +1,11 @@
-import { Movie, PopularMovies, topRated, UpComing } from "@/lib/type";
+import {
+  MoreLike,
+  Movie,
+  PopularMovies,
+  topRated,
+  UpComing,
+  Wicked,
+} from "@/lib/type";
 
 export const Upcoming: UpComing[] = [
   { title: "Dear Santa", rating: 6.9, imageUrl: "/wicked.jpg" },
@@ -89,5 +96,39 @@ export const Movies: Movie[] = [
       "After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced. ",
     imageUrl: "/kino3.jpg",
     rating: 7.0,
+  },
+];
+
+export const WickedMovie: Wicked[] = [
+  {
+    title: "",
+    minute: "",
+    imageUrl: "/wicked.jpg",
+  },
+
+  {
+    title: "Play",
+    imageUrl: "/gladiator.png",
+    minute: 230,
+  },
+];
+
+export const MoreLikeThis: MoreLike[] = [
+  { title: "Gladiator II", rating: 6.9, imageUrl: "/wicked.jpg" },
+  {
+    title: "Deadpool & Wolverine",
+    rating: 6.9,
+    imageUrl: "/wicked.jpg",
+  },
+  {
+    title: "Goldilocks and the Three Bears: Death and Porridge",
+    rating: 6.9,
+    imageUrl: "/gladiator.png",
+  },
+  { title: "A Real Pain", rating: 6.9, imageUrl: "/kino3.jpg" },
+  {
+    title: "Red one",
+    rating: 6.9,
+    imageUrl: "/wicked.jpg",
   },
 ];

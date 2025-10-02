@@ -2,19 +2,29 @@
 
 import { Props } from "@/lib/type";
 import { Button } from "./button";
+import ReactPlayer from "react-player";
 
 export function FeaturedMovie(props: Props) {
   const { title, description, imageUrl, text, rating } = props;
+  function MyVideoPlayer() {
+    return (
+      <video>
+        <source
+          src="https://www.youtube.com/watch?v=xh-PvhEO_qg"
+          type="video/mp4"
+        />
+      </video>
+    );
+  }
 
   return (
     <div>
-      <section className="relative w-full h-[500px] rounded-xl overflow-hidden">
+      <section className="relative w-full h-[600px] rounded-xl overflow-hidden">
         <img
           src={imageUrl}
           alt={title}
-          className="absolute inset-0 w-full h-[600px] "
+          className="absolute bg-contain  w-full h-full "
         />
-
         <div className=" relative p-8 ml-30 mt-20 text-white">
           <p className="text-2xl  mb-2">{text}</p>
           <h1 className="text-4xl font-bold">{title}</h1>
@@ -38,10 +48,15 @@ export function FeaturedMovie(props: Props) {
           </p>
 
           <p className="mt-4 max-w-[600px]">{description}</p>
-
-          <Button variant="secondary" className="mt-5 flex items-center gap-2">
-            ▶ Watch Trailer
-          </Button>
+          <a href="http://localhost:3000/Wicked">
+            <Button
+              variant="secondary"
+              onClick={() => MyVideoPlayer()}
+              className="mt-5 flex items-center gap-2"
+            >
+              ▶ Watch Trailer
+            </Button>
+          </a>
         </div>
       </section>
     </div>

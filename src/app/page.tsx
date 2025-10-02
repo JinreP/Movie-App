@@ -1,5 +1,4 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -12,10 +11,10 @@ import Autoplay from "embla-carousel-autoplay";
 import { NavBar } from "@/components/ui/NavBar";
 import { FeaturedMovie } from "@/components/ui/Hero";
 
-import { Popular } from "@/components/ui/UpComing";
 import { Movies, TopRated, popularMoviesData, Upcoming } from "@/lib/constant";
 import { Footer } from "@/components/Footer";
 import { Text } from "@/components/ui/Text";
+import { Popular } from "@/components/ui/Popular";
 
 export default function Home() {
   return (
@@ -46,7 +45,7 @@ export default function Home() {
           <CarouselNext className="absolute right-4  " />
         </Carousel>
         <Text text={"Upcoming"} />
-        <div className="flex flex-wrap gap-10   items-center mt-10">
+        <div className="flex flex-wrap gap-10  justify-center px-70 items-center mt-10">
           {Upcoming.map((movie, i) => (
             <Popular
               key={i}
@@ -58,7 +57,7 @@ export default function Home() {
         </div>
         <Text text={"Popular"} />
 
-        <div className="flex flex-wrap gap-10 justify-start items-center mt-10">
+        <div className="flex flex-wrap gap-10  justify-center px-70 items-center mt-10">
           {popularMoviesData.map((movie, i) => (
             <Popular
               key={i}
@@ -71,7 +70,7 @@ export default function Home() {
 
         <Text text={"TopRated"} />
 
-        <div className="flex flex-wrap gap-10 justify-start items-center mt-10">
+        <div className="flex flex-wrap gap-10 justify-center px-70 items-center mt-10">
           {TopRated.map((movie, i) => (
             <Popular
               key={i}

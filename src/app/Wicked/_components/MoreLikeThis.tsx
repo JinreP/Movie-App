@@ -5,13 +5,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { PopularMovies } from "@/lib/type";
+import { MoreLike } from "@/lib/type";
 
-export function Popular(Props: PopularMovies) {
+export function MoreLikeThisM(Props: MoreLike) {
   const { title, imageUrl, rating } = Props;
   return (
     <div className="flex gap-2 ">
-      <Card className="w-[300px] overflow-hidden  flex flex-col h-[460px] p-0">
+      <Card className="w-[300px] overflow-hidden  flex flex-col h-[500px] p-0 ">
         <div className=" h-[340px] w-full">
           <img
             src={imageUrl}

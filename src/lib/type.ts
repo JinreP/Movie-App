@@ -30,3 +30,15 @@ export type topRated = {
   rating: number;
   imageUrl: string;
 };
+
+export type Wicked = {
+  title: string;
+  minute: any;
+  imageUrl: string;
+};
+
+export type MoreLike = {
+  title: string;
+  rating: number;
+  imageUrl: string;
+};

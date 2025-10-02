@@ -3,7 +3,7 @@ import { Button } from "./button";
 export function Text(props: any) {
   const { text } = props;
   return (
-    <div className="flex gap-2 items-center justify-between ml-14 mt-10 mr-14">
+    <div className="flex gap-2 items-center justify-between  mt-10 px-70">
       <h1 className="text-2xl font-bold">{text}</h1>{" "}
       <Button variant={"secondary"} className="flex gap-2 items-center">
         {" "}
