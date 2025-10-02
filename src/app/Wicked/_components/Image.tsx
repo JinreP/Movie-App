@@ -19,9 +19,9 @@ export function Image(props: any) {
 
   return (
     <div className="Image flex gap-10 mt-2 justify-between  items-center">
-      <img src="wicked.jpg" className="w-[450px] h-[600px]" alt="" />
+      <img src="wicked.jpg" className="w-[290px] h-[428px]" alt="" />
       <div className="relative">
-        <img src="gladiator.png" className="w-[1200px] h-[600px]" alt="" />
+        <img src="gladiator.png" className="w-[760px] h-[428px]" alt="" />
         <div className="flex items-center gap-3 absolute left-3 bottom-5">
           <Button variant={"secondary"} className="rounded-[50%] ">
             <svg

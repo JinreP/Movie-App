@@ -6,15 +6,17 @@ import { Button } from "./button";
 export function FeaturedMovie(props: Props) {
   const { title, description, imageUrl, text, rating } = props;
 
-
   return (
     <div>
-      <section className="relative w-full h-[600px] rounded-xl overflow-hidden">
-        <img
+      <section
+        className="relative w-full bg-cover bg-center object-cover  h-[600px] rounded-xl overflow-hidden"
+        style={{ backgroundImage: `url(${imageUrl})` }}
+      >
+        {/* <img
           src={imageUrl}
           alt={title}
           className="absolute bg-contain  w-full h-full "
-        />
+        /> */}
         <div className=" relative p-8 ml-30 mt-20 text-white">
           <p className="text-2xl  mb-2">{text}</p>
           <h1 className="text-4xl font-bold">{title}</h1>

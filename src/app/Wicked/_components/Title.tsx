@@ -2,7 +2,7 @@ import React from "react";
 
 export function Title() {
   return (
-    <div className="flex px-70 justify-between">
+    <div className="flex px-55 justify-between">
       <div className="flex flex-col">
         <h1 className="text-2xl font-bold">Wicked</h1>
         <p className="text-gray-300">2024.11.26 · PG · 2h 40m</p>

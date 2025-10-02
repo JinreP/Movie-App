@@ -5,7 +5,7 @@ export function Genres() {
   const genres = ["Fairy Tale", "Pop Musical", "Fantasy", "Musical", "Romance"];
   return (
     <div className="flex flex-col   mt-10 gap-2">
-      <div className="flex gap-2 px-69">
+      <div className="flex gap-2 px-50">
         <Badge variant="outline">Fairy tail</Badge>
         <Badge variant="outline">Pop musical</Badge>
         <Badge variant="outline">Fantasy</Badge>
