@@ -6,7 +6,6 @@ export function Text(props: any) {
     <div className="flex gap-2 items-center justify-between  mt-10 px-70">
       <h1 className="text-2xl font-bold">{text}</h1>{" "}
       <Button variant={"secondary"} className="flex gap-2 items-center">
-        {" "}
         See more
         <svg
           xmlns="http://www.w3.org/2000/svg"

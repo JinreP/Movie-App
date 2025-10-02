@@ -2,20 +2,10 @@
 
 import { Props } from "@/lib/type";
 import { Button } from "./button";
-import ReactPlayer from "react-player";
 
 export function FeaturedMovie(props: Props) {
   const { title, description, imageUrl, text, rating } = props;
-  function MyVideoPlayer() {
-    return (
-      <video>
-        <source
-          src="https://www.youtube.com/watch?v=xh-PvhEO_qg"
-          type="video/mp4"
-        />
-      </video>
-    );
-  }
+
 
   return (
     <div>
@@ -51,7 +41,6 @@ export function FeaturedMovie(props: Props) {
           <a href="http://localhost:3000/Wicked">
             <Button
               variant="secondary"
-              onClick={() => MyVideoPlayer()}
               className="mt-5 flex items-center gap-2"
             >
               ▶ Watch Trailer

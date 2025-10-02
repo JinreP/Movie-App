@@ -19,7 +19,6 @@ import { Popular } from "@/components/ui/Popular";
 export default function Home() {
   return (
     <div className="">
-      <NavBar />
       <div className="  ">
         <Carousel
           plugins={[
@@ -81,7 +80,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -8,10 +8,10 @@ import { Desc } from "./_components/Desc";
 import { Authors } from "./_components/Authors";
 import { MoreLikeThisM } from "./_components/MoreLikeThis";
 import { Footer } from "@/components/Footer";
+
 export default function Wicked(props: any) {
   return (
     <div className="BIGGEST ">
-      <NavBar />;
       <Title />
       <div className="flex justify-center ">
         <Image />
@@ -42,7 +42,6 @@ export default function Wicked(props: any) {
           />
         ))}
       </div>
-      <Footer />
     </div>
   );
 }
