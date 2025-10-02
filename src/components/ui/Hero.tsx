@@ -12,7 +12,7 @@ export function FeaturedMovie(props: Props) {
         <img
           src={imageUrl}
           alt={title}
-          className="absolute inset-0 w-full h-[600px] object-cover"
+          className="absolute inset-0 w-full h-[600px] "
         />
 
         <div className=" relative p-8 ml-30 mt-20 text-white">
