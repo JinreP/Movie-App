@@ -8,6 +8,7 @@ export function Text(props: any) {
       <Button variant={"secondary"} className="flex gap-2 items-center">
         See more
         <svg
+          className="text-black dark:text-white"
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
@@ -16,7 +17,7 @@ export function Text(props: any) {
         >
           <path
             d="M3.33301 8.00004H12.6663M12.6663 8.00004L7.99967 3.33337M12.6663 8.00004L7.99967 12.6667"
-            stroke="#18181B"
+            stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
           />

@@ -47,7 +47,6 @@ export function Genres() {
               <path
                 d="M6 12L10 8L6 4"
                 stroke="currentColor"
-                fill="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />

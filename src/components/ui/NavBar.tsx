@@ -52,7 +52,6 @@ export function NavBar() {
                 <path
                   d="M4 6.5L8 10.5L12 6.5"
                   stroke="currentColor"
-                  fill="currentColor"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />

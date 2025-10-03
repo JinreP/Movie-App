@@ -33,14 +33,16 @@ export default function Wicked(props: any) {
       />
       <Text text={"More like this"} />
       <div className="flex flex-wrap gap-10  justify-center  items-center mt-10">
-        {MoreLikeThis.map((movie, i) => (
-          <MoreLikeThisM
-            key={i}
-            title={movie.title}
-            imageUrl={movie.imageUrl}
-            rating={movie.rating}
-          />
-        ))}
+        <div className="w-[1250px] flex gap-10">
+          {MoreLikeThis.map((movie, i) => (
+            <MoreLikeThisM
+              key={i}
+              title={movie.title}
+              imageUrl={movie.imageUrl}
+              rating={movie.rating}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
