@@ -63,7 +63,9 @@ export function NavBar() {
             <DropdownMenuLabel>
               <div className="flex flex-col">
                 <h1 className="text-4xl font-bold">Genres</h1>{" "}
-                <p className="text-2xl ">See lists of movies by genre</p>
+                <a href="http://localhost:3000/GenreFilter">
+                  <p className="text-2xl ">See lists of movies by genre</p>
+                </a>
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
