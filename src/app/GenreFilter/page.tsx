@@ -13,8 +13,8 @@ import { AnimationCards } from "./_components/CardFiltering";
 export default function GenreHome() {
   return (
     <div>
-      <h1 className="text-4xl pl-90">Search filter</h1>
-      <div className="flex gap-5 justify-center mt-5">
+      <h1 className="text-4xl">Search filter</h1>
+      <div className="flex gap-5 mt-">
         <GenresFiltering />
         <AnimationCards title={""} rating={0} imageUrl={""} />
       </div>
