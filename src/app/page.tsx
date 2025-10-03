@@ -1,18 +1,8 @@
 "use client";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 
-import { FeaturedMovie } from "@/components/ui/Hero";
+import { HeroMap } from "@/components/ui/Hero";
 
-import { Movies, TopRated, popularMoviesData, Upcoming } from "@/lib/constant";
 import { Text } from "@/components/ui/Text";
-import { Popular } from "@/components/ui/Popular";
 import {
   PopularMoviesCards,
   TopRatedCard,
@@ -23,7 +13,13 @@ export default function Home() {
   return (
     <div className="">
       <div className="  ">
-     
+        <HeroMap
+          text={""}
+          title={""}
+          description={""}
+          imageUrl={""}
+          rating={0}
+        />
         <Text text={"Upcoming"} />
         <div className="flex flex-wrap gap-10  justify-center  items-center mt-10">
           <UpComingCard title={""} rating={0} imageUrl={""} />

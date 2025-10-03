@@ -42,3 +42,9 @@ export type MoreLike = {
   rating: number;
   imageUrl: string;
 };
+
+export type AnimationCard = {
+  title: string;
+  rating: number;
+  imageUrl: string;
+};

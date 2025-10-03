@@ -1,4 +1,3 @@
-import { NavBar } from "../../components/ui/NavBar";
 import { Title } from "@/app/Wicked/_components/Title";
 import { Image } from "@/app/Wicked/_components/Image";
 import { MoreLikeThis } from "@/lib/constant";
@@ -7,7 +6,6 @@ import { Genres } from "./_components/Genre";
 import { Desc } from "./_components/Desc";
 import { Authors } from "./_components/Authors";
 import { MoreLikeThisM } from "./_components/MoreLikeThis";
-import { Footer } from "@/components/Footer";
 
 export default function Wicked(props: any) {
   return (
@@ -29,7 +27,7 @@ export default function Wicked(props: any) {
       />
       <Authors
         author={"Stars"}
-        name={"Cynthia Erivo ·  Ariana Grande · Jeff Goldblum"}
+        name={"....Cynthia Erivo ·  Ariana Grande · Jeff Goldblum"}
       />
       <Text text={"More like this"} />
       <div className="flex flex-wrap gap-10  justify-center  items-center mt-10">

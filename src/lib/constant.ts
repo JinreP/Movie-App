@@ -1,4 +1,5 @@
 import {
+  AnimationCard,
   MoreLike,
   Movie,
   PopularMovies,
@@ -131,4 +132,31 @@ export const MoreLikeThis: MoreLike[] = [
     rating: 6.9,
     imageUrl: "/wicked.jpg",
   },
+];
+
+export const AnimationMovie: AnimationCard[] = [
+  {
+    title: "Solo Leveling: ReAwakening ",
+    rating: 6.9,
+    imageUrl: "/wicked.jpg",
+  },
+  {
+    title: "Sonic the Hedgehog 3",
+    rating: 6.9,
+    imageUrl: "/wicked.jpg",
+  },
+  { title: "Moana 2", rating: 6.9, imageUrl: "/gladiator.png" },
+  { title: "The Wild Robot", rating: 6.9, imageUrl: "/kino3.jpg" },
+  {
+    title: "Inside Out 2",
+    rating: 6.9,
+    imageUrl: "/wicked.jpg",
+  },
+  { title: "IF", rating: 6.9, imageUrl: "/gladiator.png" },
+  { title: "The Grinch", rating: 6.9, imageUrl: "/kino3.jpg" },
+  { title: "The Boy and the Heron", rating: 6.9, imageUrl: "/wicked.jpg" },
+  { title: "Flow", rating: 6.9, imageUrl: "/gladiator.png" },
+  { title: "Look Back", rating: 6.9, imageUrl: "/kino3.jpg" },
+  { title: "Spellbound", rating: 6.9, imageUrl: "/gladiator.png" },
+  { title: "Sing", rating: 6.9, imageUrl: "/kino3.jpg" },
 ];

@@ -10,6 +10,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./carousel";
+import { Movies } from "@/lib/constant";
+import Autoplay from "embla-carousel-autoplay";
 
 export function FeaturedMovie(props: Props) {
   const { title, description, imageUrl, text, rating } = props;
