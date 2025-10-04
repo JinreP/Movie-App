@@ -14,7 +14,7 @@ export default function GenreHome() {
   return (
     <div>
       <h1 className="text-4xl">Search filter</h1>
-      <div className="flex gap-5 mt-">
+      <div className="flex gap-5 ">
         <GenresFiltering />
         <AnimationCards title={""} rating={0} imageUrl={""} />
       </div>
