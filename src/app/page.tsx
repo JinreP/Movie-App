@@ -23,7 +23,7 @@ export default function Home() {
         },
       })
       .then((response) => {
-        setMovies(response.data.results || []);
+        setMovies(response.data.results);
       });
   }, []);
 
