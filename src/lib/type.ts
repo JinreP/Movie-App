@@ -1,3 +1,5 @@
+import { Key } from "react";
+
 export type UpComing = {
   title: string;
   rating: number;
@@ -12,6 +14,10 @@ export type Props = {
 };
 
 export type Movie = {
+  id: Key | null | undefined;
+  overview: string;
+  poster_path: any;
+  vote_average: number;
   text: string;
   title: string;
   description: string;
@@ -48,3 +54,11 @@ export type AnimationCard = {
   rating: number;
   imageUrl: string;
 };
+
+export interface Movies {
+  id: number;
+  title: string;
+  overview: string;
+  poster_path: string;
+  vote_average: number;
+}

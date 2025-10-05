@@ -10,7 +10,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./carousel";
-import { Movies } from "@/lib/constant";
 import Autoplay from "embla-carousel-autoplay";
 
 export function FeaturedMovie(props: Props) {
@@ -77,7 +76,7 @@ export function HeroMap(props: Props) {
         ]}
       >
         <CarouselContent>
-          {Movies.map((movie) => (
+          {/* {Movies.map((movie) => (
             <CarouselItem key={movie.title}>
               <FeaturedMovie
                 text={movie.text}
@@ -87,7 +86,7 @@ export function HeroMap(props: Props) {
                 rating={movie.rating}
               />
             </CarouselItem>
-          ))}
+          ))} */}
         </CarouselContent>
         <CarouselPrevious className="absolute left-4  " />
         <CarouselNext className="absolute right-4  " />

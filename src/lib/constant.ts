@@ -71,34 +71,34 @@ export const TopRated: topRated[] = [
   { title: "Terminator 2: Judgement Day", rating: 6.9, imageUrl: "/kino3.jpg" },
 ];
 
-export const Movies: Movie[] = [
-  {
-    text: "Now playing",
-    title: "Wicked",
-    description:
-      "Elphaba, a misunderstood young woman because of her green skin, and Glinda, a popular girl, become friends at Shiz University in the Land of Oz. After an encounter with the Wonderful Wizard of Oz, their friendship reaches a crossroads. ",
-    imageUrl: "/wicked.jpg",
-    rating: 6.9,
-  },
+// export const Movies: Movie[] = [
+//   {
+//     text: "Now playing",
+//     title: "Wicked",
+//     description:
+//       "Elphaba, a misunderstood young woman because of her green skin, and Glinda, a popular girl, become friends at Shiz University in the Land of Oz. After an encounter with the Wonderful Wizard of Oz, their friendship reaches a crossroads. ",
+//     imageUrl: "/wicked.jpg",
+//     rating: 6.9,
+//   },
 
-  {
-    text: "Now playing",
-    title: "Gladiator II",
-    description:
-      "After his home is conquered by the tyrannical emperors who now lead Rome, Lucius is forced to enter the Colosseum and must look to his past to find strength to return the glory of Rome to its people.",
-    imageUrl: "/gladiator.png",
-    rating: 7.3,
-  },
+//   {
+//     text: "Now playing",
+//     title: "Gladiator II",
+//     description:
+//       "After his home is conquered by the tyrannical emperors who now lead Rome, Lucius is forced to enter the Colosseum and must look to his past to find strength to return the glory of Rome to its people.",
+//     imageUrl: "/gladiator.png",
+//     rating: 7.3,
+//   },
 
-  {
-    text: "Now Playing:",
-    title: "Moana 2",
-    description:
-      "After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced. ",
-    imageUrl: "/kino3.jpg",
-    rating: 7.0,
-  },
-];
+//   {
+//     text: "Now Playing:",
+//     title: "Moana 2",
+//     description:
+//       "After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced. ",
+//     imageUrl: "/kino3.jpg",
+//     rating: 7.0,
+//   },
+// ];
 
 export const WickedMovie: Wicked[] = [
   {

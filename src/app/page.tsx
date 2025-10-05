@@ -8,32 +8,41 @@ import {
   TopRatedCard,
   UpComingCard,
 } from "@/components/ui/Cards";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import { Movie } from "@/lib/type";
 
 export default function Home() {
+  const [movies, setMovies] = useState<Movie[]>([]);
+
   useEffect(() => {
     axios
-      .get("/api/movies/popular", {
+      .get("https://api.themoviedb.org/3/movie/popular?page=1", {
         headers: {
-          Authorization: `Bearer ${process.env.TOKEN}`,
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYjkwMWUzNTJlOTFkMmU1OTcyNThhYzU1ZDM2ZmZmMiIsIm5iZiI6MTc1OTA1MDY1Ny4zMjUsInN1YiI6IjY4ZDhmYmExOTBlY2QwMDlhYWI5YTFmZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.MZd1y3tFFfxvZlPqBNIqCDw0G_aMwCZzWxffwENlwT8`,
         },
       })
       .then((response) => {
-        console.log(response.data);
+        setMovies(response.data.results || []);
       });
   }, []);
 
   return (
     <div className="">
-      <div className="  ">
-        <HeroMap
-          text={""}
-          title={""}
-          description={""}
-          imageUrl={""}
-          rating={0}
-        />
+      <div className=" ">
+        {movies.map((movie, i) => {
+          return (
+            <HeroMap
+              key={i}
+              text={"Now Playing"}
+              title={movie.title}
+              description={movie.description}
+              imageUrl={" https://image.tmdb.org/t/p"}
+              rating={movie.rating}
+            />
+          );
+        })}
+
         <Text text={"Upcoming"} />
         <div className="flex flex-wrap gap-10  justify-center  items-center mt-10">
           <UpComingCard title={""} rating={0} imageUrl={""} />
@@ -52,4 +61,7 @@ export default function Home() {
       </div>
     </div>
   );
+}
+function setPopularMovies(arg0: any) {
+  throw new Error("Function not implemented.");
 }
