@@ -30,16 +30,19 @@ export default async function Home() {
       <div className=" ">
         <HeroMap hero={playingNow.results} />
 
-        <Text text={"Upcoming"} />
-        <div className="flex flex-wrap gap-10  justify-center  items-center mt-10">
+        <div className="flex  flex-col items-center mt-10">
+          <Text text={"Upcoming"} />
+
           <UpComingCard movies={upComingMovies.results} />
         </div>
-        <Text text={"Popular"} />
-        <div className="flex flex-wrap gap-10  justify-center  items-center mt-10">
+        <div className="flex  flex-col  justify-center  items-center mt-10">
+          <Text text={"Popular"} />
+
           <PopularMoviesCards movies={popularMovies.results} />
         </div>
-        <Text text={"TopRated"} />
-        <div className="flex flex-wrap gap-10 justify-center  items-center mt-10">
+        <div className="flex justify-center flex-col  items-center mt-10">
+          <Text text={"TopRated"} />
+
           <TopRatedCard movies={topRatedMovies.results} />
         </div>
       </div>

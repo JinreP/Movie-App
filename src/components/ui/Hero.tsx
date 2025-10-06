@@ -17,7 +17,7 @@ export function FeaturedMovie(props: Props) {
   return (
     <div>
       <section
-        className="relative w-full bg-cover bg-center object-cover  h-[600px] rounded-xl overflow-hidden"
+        className="relative w-full bg-cover bg-center object-cover  h-[600px] bg-no-repeat  rounded-xl overflow-hidden"
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original/${backdrop_path})`,
         }}
