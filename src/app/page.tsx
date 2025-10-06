@@ -5,6 +5,7 @@ import {
   TopRatedCard,
   UpComingCard,
 } from "@/components/ui/Cards";
+// import MovieDetailsPage from "@/app/Details/page";
 import axios from "axios";
 export default async function Home() {
   const movieDatas = async (category: string) => {
@@ -23,6 +24,7 @@ export default async function Home() {
   const upComingMovies = await movieDatas("upcoming");
   const topRatedMovies = await movieDatas("top_rated");
   const playingNow = await movieDatas("now_playing");
+  // const movieDetails = await movieDatas("${movieId}");
 
   return (
     <div className="">
@@ -44,6 +46,8 @@ export default async function Home() {
 
           <TopRatedCard movies={topRatedMovies.results} />
         </div>
+
+        {/* <MovieDetailsPage Details={movieDetails} /> */}
       </div>
     </div>
   );

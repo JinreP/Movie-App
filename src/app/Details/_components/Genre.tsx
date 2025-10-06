@@ -1,8 +1,6 @@
 import { Badge } from "@/components/ui/badge";
-import { BadgeCheckIcon } from "lucide-react";
 
 export function Genres() {
-  const genres = ["Fairy Tale", "Pop Musical", "Fantasy", "Musical", "Romance"];
   return (
     <div className="flex flex-col   mt-10 gap-2">
       <div className="flex gap-2 px-50">

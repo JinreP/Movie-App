@@ -1,21 +1,8 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
-import ReactPlayer from "react-player";
 
 export function Image(props: any) {
   const { imageUrl, title } = props;
-  //Trailer test
-  // function CustomVideoPlayer() {
-  //   return (
-  //     <ReactPlayer
-  //       src="https://www.youtube.com/watch?v=xh-PvhEO_qg"
-  //       playing={true}
-  //       controls={true}
-  //       width="800px"
-  //       height="450px"
-  //     />
-  //   );
-  // }
 
   return (
     <div className="Image flex gap-10 mt-2 justify-between  items-center">
@@ -25,7 +12,7 @@ export function Image(props: any) {
         <div className="flex items-center gap-3 absolute left-3 bottom-5">
           <Button variant={"secondary"} className="rounded-[50%] ">
             <svg
-            className=""
+              className=""
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"

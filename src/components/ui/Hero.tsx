@@ -45,7 +45,7 @@ export function FeaturedMovie(props: Props) {
           </p>
 
           <p className="mt-4 max-w-[600px]">{description}</p>
-          <a href="http://localhost:3000/Wicked">
+          <a href="http://localhost:3000/Details">
             <Button
               variant="secondary"
               className="mt-5 flex items-center gap-2"

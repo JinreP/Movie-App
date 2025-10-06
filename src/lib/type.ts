@@ -38,3 +38,13 @@ export type AnimationCard = {
   rating: number;
   imageUrl: string;
 };
+
+export type kinoDetails = {
+  overview: string;
+  title: string | null | undefined;
+  popularity: number;
+  id: number;
+  description: string;
+  backdrop_path: string;
+  vote_average: number;
+};
