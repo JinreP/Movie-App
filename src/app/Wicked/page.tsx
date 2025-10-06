@@ -14,21 +14,23 @@ export default function Wicked(props: any) {
       <div className="flex justify-center ">
         <Image />
       </div>
-      <Genres />
-      <Desc
-        desc={
-          "Elphaba, a misunderstood young woman because of her green skin, and Glinda, a popular girl, become friends at Shiz University in the Land of Oz. After an encounter with the Wonderful Wizard of Oz, their friendship reaches a crossroads. "
-        }
-      />
-      <Authors author={"Director"} name={"Jon M. Chu"} />
-      <Authors
-        author={"Writers"}
-        name={"Winnie Holzman ·  Dana Fox · Gregory Maguire"}
-      />
-      <Authors
-        author={"Stars"}
-        name={"....Cynthia Erivo ·  Ariana Grande · Jeff Goldblum"}
-      />
+      <div className="flex justify-center flex-col">
+        <Genres />
+        <Desc
+          desc={
+            "Elphaba, a misunderstood young woman because of her green skin, and Glinda, a popular girl, become friends at Shiz University in the Land of Oz. After an encounter with the Wonderful Wizard of Oz, their friendship reaches a crossroads. "
+          }
+        />
+        <Authors author={"Director"} name={"Jon M. Chu"} />
+        <Authors
+          author={"Writers"}
+          name={"Winnie Holzman ·  Dana Fox · Gregory Maguire"}
+        />
+        <Authors
+          author={"Stars"}
+          name={"....Cynthia Erivo ·  Ariana Grande · Jeff Goldblum"}
+        />
+      </div>
       <Text text={"More like this"} />
       <div className="flex flex-wrap gap-10  justify-center  items-center mt-10">
         <div className="w-[1250px] flex gap-10">

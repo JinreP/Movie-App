@@ -1,5 +1,4 @@
 import { HeroMap } from "@/components/ui/Hero";
-
 import { Text } from "@/components/ui/Text";
 import {
   PopularMoviesCards,
@@ -41,7 +40,7 @@ export default async function Home() {
           <PopularMoviesCards movies={popularMovies.results} />
         </div>
         <div className="flex justify-center flex-col  items-center mt-10">
-          <Text text={"TopRated"} />
+          <Text text={"Top Rated"} />
 
           <TopRatedCard movies={topRatedMovies.results} />
         </div>
