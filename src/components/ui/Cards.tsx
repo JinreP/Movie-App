@@ -1,21 +1,20 @@
-"use client";
-
-import { popularMoviesData, TopRated, Upcoming } from "@/lib/constant";
-import { topRated, UpComing } from "@/lib/type";
+import { MovieType } from "@/lib/type";
 import { MovieMap } from "./MovieMap";
 
-export function UpComingCard(Props: UpComing) {
-  const { title, imageUrl, rating } = Props;
+export function UpComingCard({ movies }: { movies: MovieType[] }) {
+  console.log("hello ssss", movies);
+
   return (
     <div className="flex gap-2 ">
       <div className="flex flex-wrap gap-10  justify-center ml-23 items-center mt-10">
         <div className="w-[1400px] flex flex-wrap gap-10">
-          {Upcoming.map((movie, i) => (
+          {movies?.splice(0, 10).map((movie, i) => (
             <MovieMap
               key={i}
               title={movie.title}
-              imageUrl={movie.imageUrl}
-              rating={movie.rating}
+              poster_path={movie.poster_path}
+              vote_average={movie.vote_average}
+              results={undefined}
             />
           ))}
         </div>
@@ -24,18 +23,18 @@ export function UpComingCard(Props: UpComing) {
   );
 }
 
-export function TopRatedCard(Props: topRated) {
-  const { title, imageUrl, rating } = Props;
-
+export function PopularMoviesCards({ movies }: { movies: MovieType[] }) {
+  console.log("hello movies", movies);
   return (
-    <div className="flex flex-wrap gap-10 justify-center ml-23 items-center mt-10">
-      <div className="w-[1400px] flex flex-wrap gap-10">
-        {TopRated.map((movie, i) => (
+    <div className="flex flex-wrap gap-10 justify-center  items-center mt-10">
+      <div className="w-[1400px] flex flex-wrap gap-10 ml-23">
+        {movies?.splice(0, 10).map((movie, i) => (
           <MovieMap
             key={i}
             title={movie.title}
-            imageUrl={movie.imageUrl}
-            rating={movie.rating}
+            poster_path={movie.poster_path}
+            vote_average={movie.vote_average}
+            results={undefined}
           />
         ))}
       </div>
@@ -43,18 +42,17 @@ export function TopRatedCard(Props: topRated) {
   );
 }
 
-export function PopularMoviesCards(Props: topRated) {
-  const { title, imageUrl, rating } = Props;
-
+export function TopRatedCard({ movies }: { movies: MovieType[] }) {
   return (
-    <div className="flex flex-wrap gap-10 justify-center  items-center mt-10">
-      <div className="w-[1400px] flex flex-wrap gap-10 ml-23">
-        {popularMoviesData.map((movie, i) => (
+    <div className="flex flex-wrap gap-10 justify-center ml-23 items-center mt-10">
+      <div className="w-[1400px] flex flex-wrap gap-10">
+        {movies?.splice(0, 10).map((movie, i) => (
           <MovieMap
             key={i}
             title={movie.title}
-            imageUrl={movie.imageUrl}
-            rating={movie.rating}
+            poster_path={movie.poster_path}
+            vote_average={movie.vote_average}
+            results={undefined}
           />
         ))}
       </div>

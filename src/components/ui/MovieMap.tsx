@@ -5,16 +5,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { PopularMovies } from "@/lib/type";
+import { MovieType } from "@/lib/type";
 
-export function MovieMap(Props: PopularMovies) {
-  const { title, imageUrl, rating } = Props;
+export function MovieMap(Props: MovieType) {
+  const { title, poster_path, vote_average } = Props;
   return (
     <div className="flex gap-2 ">
-      <Card className="w-[230px] overflow-hidden  flex flex-col h-[340px] p-0">
+      <Card className="w-[230px] overflow-hidden  flex flex-col p-0">
         <div className=" h-[340px] w-full">
           <img
-            src={imageUrl}
+            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
             className="  w-full object-cover  h-full"
             alt={title}
           />
@@ -37,7 +37,7 @@ export function MovieMap(Props: PopularMovies) {
                 strokeLinejoin="round"
               />
             </svg>
-            {rating} <span className="text-gray-300">/10</span>
+            {vote_average} <span className="text-gray-300">/10</span>
           </CardDescription>
 
           <CardTitle className="mb-6">{title}</CardTitle>

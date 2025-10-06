@@ -1,40 +1,24 @@
-import { Key } from "react";
-
 export type UpComing = {
+  poster_path: string;
+  vote_average: number;
   title: string;
   rating: number;
   imageUrl: string;
 };
 export type Props = {
-  text: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  rating: number;
-};
-
-export type Movie = {
-  id: Key | null | undefined;
   overview: string;
-  poster_path: any;
-  vote_average: number;
+  title: string | null | undefined;
   text: string;
-  title: string;
   description: string;
-  imageUrl: string;
-  rating: number;
+  backdrop_path: string;
+  vote_average: number;
 };
 
-export type PopularMovies = {
+export type MovieType = {
   title: string;
-  rating: number;
-  imageUrl: string;
-};
-
-export type topRated = {
-  title: string;
-  rating: number;
-  imageUrl: string;
+  poster_path: string;
+  vote_average: number;
+  results: any;
 };
 
 export type Wicked = {
@@ -54,11 +38,3 @@ export type AnimationCard = {
   rating: number;
   imageUrl: string;
 };
-
-export interface Movies {
-  id: number;
-  title: string;
-  overview: string;
-  poster_path: string;
-  vote_average: number;
-}

@@ -2,7 +2,6 @@
 
 import { Props } from "@/lib/type";
 import { Button } from "./button";
-import Link from "next/link";
 import {
   Carousel,
   CarouselContent,
@@ -13,21 +12,18 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 export function FeaturedMovie(props: Props) {
-  const { title, description, imageUrl, text, rating } = props;
+  const { title, description, vote_average, backdrop_path } = props;
 
   return (
     <div>
       <section
         className="relative w-full bg-cover bg-center object-cover  h-[600px] rounded-xl overflow-hidden"
-        style={{ backgroundImage: `url(${imageUrl})` }}
+        style={{
+          backgroundImage: `url(https://image.tmdb.org/t/p/original/${backdrop_path})`,
+        }}
       >
-        {/* <img
-          src={imageUrl}
-          alt={title}
-          className="absolute bg-contain  w-full h-full "
-        /> */}
         <div className=" relative p-8 ml-30 mt-20 text-white">
-          <p className="text-2xl  mb-2">{text}</p>
+          <p className="text-2xl  mb-2 ">Now Playing: </p>
           <h1 className="text-4xl font-bold">{title}</h1>
           <p className="font-bold text-white flex items-center  mb-2">
             <svg
@@ -45,7 +41,7 @@ export function FeaturedMovie(props: Props) {
                 strokeLinejoin="round"
               />
             </svg>
-            {rating} <span className="text-gray-200">/10</span>
+            {vote_average} <span className="text-gray-200">/10</span>
           </p>
 
           <p className="mt-4 max-w-[600px]">{description}</p>
@@ -63,8 +59,8 @@ export function FeaturedMovie(props: Props) {
   );
 }
 
-export function HeroMap(props: Props) {
-  const { title, description, imageUrl, text, rating } = props;
+export function HeroMap({ hero }: { hero: Props[] | undefined }) {
+  console.log("harjinu zolo o", hero);
 
   return (
     <div>
@@ -76,17 +72,19 @@ export function HeroMap(props: Props) {
         ]}
       >
         <CarouselContent>
-          {/* {Movies.map((movie) => (
+          {hero?.map((movie, i) => (
             <CarouselItem key={movie.title}>
               <FeaturedMovie
                 text={movie.text}
+                description={movie.overview}
+                key={i}
                 title={movie.title}
-                description={movie.description}
-                imageUrl={movie.imageUrl}
-                rating={movie.rating}
+                vote_average={movie.vote_average}
+                backdrop_path={movie.backdrop_path}
+                overview={""}
               />
             </CarouselItem>
-          ))} */}
+          ))}
         </CarouselContent>
         <CarouselPrevious className="absolute left-4  " />
         <CarouselNext className="absolute right-4  " />

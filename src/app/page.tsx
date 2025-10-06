@@ -1,5 +1,3 @@
-"use client";
-
 import { HeroMap } from "@/components/ui/Hero";
 
 import { Text } from "@/components/ui/Text";
@@ -8,60 +6,43 @@ import {
   TopRatedCard,
   UpComingCard,
 } from "@/components/ui/Cards";
-import { useEffect, useState } from "react";
 import axios from "axios";
-import { Movie } from "@/lib/type";
-
-export default function Home() {
-  const [movies, setMovies] = useState<Movie[]>([]);
-
-  useEffect(() => {
-    axios
-      .get("https://api.themoviedb.org/3/movie/popular?page=1", {
+export default async function Home() {
+  const movieDatas = async (category: string) => {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=1`,
+      {
         headers: {
           Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYjkwMWUzNTJlOTFkMmU1OTcyNThhYzU1ZDM2ZmZmMiIsIm5iZiI6MTc1OTA1MDY1Ny4zMjUsInN1YiI6IjY4ZDhmYmExOTBlY2QwMDlhYWI5YTFmZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.MZd1y3tFFfxvZlPqBNIqCDw0G_aMwCZzWxffwENlwT8`,
         },
-      })
-      .then((response) => {
-        setMovies(response.data.results);
-      });
-  }, []);
+      }
+    );
+    return response.data;
+  };
+
+  const popularMovies = await movieDatas("popular");
+  const upComingMovies = await movieDatas("upcoming");
+  const topRatedMovies = await movieDatas("top_rated");
+  const playingNow = await movieDatas("now_playing");
 
   return (
     <div className="">
       <div className=" ">
-        {movies.map((movie, i) => {
-          return (
-            <HeroMap
-              key={i}
-              text={"Now Playing"}
-              title={movie.title}
-              description={movie.description}
-              imageUrl={" https://image.tmdb.org/t/p"}
-              rating={movie.rating}
-            />
-          );
-        })}
+        <HeroMap hero={playingNow.results} />
 
         <Text text={"Upcoming"} />
         <div className="flex flex-wrap gap-10  justify-center  items-center mt-10">
-          <UpComingCard title={""} rating={0} imageUrl={""} />
+          <UpComingCard movies={upComingMovies.results} />
         </div>
         <Text text={"Popular"} />
-
         <div className="flex flex-wrap gap-10  justify-center  items-center mt-10">
-          <PopularMoviesCards title={""} rating={0} imageUrl={""} />
+          <PopularMoviesCards movies={popularMovies.results} />
         </div>
-
         <Text text={"TopRated"} />
-
         <div className="flex flex-wrap gap-10 justify-center  items-center mt-10">
-          <TopRatedCard title={""} rating={0} imageUrl={""} />
+          <TopRatedCard movies={topRatedMovies.results} />
         </div>
       </div>
     </div>
   );
-}
-function setPopularMovies(arg0: any) {
-  throw new Error("Function not implemented.");
 }
