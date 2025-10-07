@@ -7,14 +7,16 @@ import {
 } from "@/components/ui/card";
 import { MovieType } from "@/lib/type";
 import Link from "next/link";
+import Image from "next/image";
 
 export function MovieMap(Props: MovieType) {
-  const { title, poster_path, vote_average } = Props;
+  const { title, poster_path, vote_average, id } = Props;
   return (
     <div className="flex gap-2 ">
       <Card className="w-[230px] overflow-hidden  flex flex-col p-0">
         <div className=" h-[340px] w-full">
-          <Link href="http://localhost:3000/Details">
+          <Link href={`/Details/${id}`}>
+
             <img
               src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
               className="  w-full object-cover  h-full"

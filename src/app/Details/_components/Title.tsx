@@ -1,11 +1,20 @@
 import React from "react";
-
-export function Title() {
+export function Title({
+  title,
+  rating,
+  date,
+  popularity,
+}: {
+  title: string;
+  rating: number;
+  date: Date;
+  popularity: number;
+}) {
   return (
-    <div className="flex px-55 justify-between">
+    <div className="flex px-100 justify-between">
       <div className="flex flex-col">
-        <h1 className="text-2xl font-bold">Wicked</h1>
-        <p className="text-gray-300">2024.11.26 · PG · 2h 40m</p>
+        <h1 className="text-2xl font-bold">{title}</h1>
+        <p className="text-gray-300">{date}</p>
       </div>
       <div className="flex flex-col">
         <p className="">Rating</p>
@@ -26,12 +35,12 @@ export function Title() {
             />
           </svg>
           <div className="flex">
-            <p className=" font-bold">6.9</p>
+            <p className=" font-bold">{rating}</p>
             <span className="text-gray-300">/10</span>
           </div>
         </div>
         <div className="text-gray-300">
-          <p className="">37k</p>
+          <p className="">{popularity}K</p>
         </div>
       </div>
     </div>

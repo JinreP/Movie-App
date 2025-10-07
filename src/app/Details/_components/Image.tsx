@@ -1,14 +1,26 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
 
-export function Image(props: any) {
-  const { imageUrl, title } = props;
-
+export function Image({
+  backdrop_path,
+  poster_path,
+}: {
+  backdrop_path: string;
+  poster_path: string;
+}) {
   return (
     <div className="Image flex gap-10 mt-2 justify-between  items-center">
-      <img src="wicked.jpg" className="w-[290px] h-[428px]" alt="" />
+      <img
+        src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+        className="w-[290px] h-[428px]"
+        alt="kino  "
+      />
       <div className="relative">
-        <img src="gladiator.png" className="w-[760px] h-[428px]" alt="" />
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
+          className="w-[760px] h-[428px]"
+          alt="kino"
+        />
         <div className="flex items-center gap-3 absolute left-3 bottom-5">
           <Button variant={"secondary"} className="rounded-[50%] ">
             <svg
