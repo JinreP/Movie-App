@@ -66,13 +66,15 @@ export default async function MovieDetailsPage({
   console.log(moreLikeThisMovies, "sdadada");
 
   return (
-    <div className=" ">
-      <Title
-        title={movieDetail.title}
-        rating={movieDetail.vote_average}
-        date={movieDetail.release_date}
-        popularity={movieDetail.popularity}
-      />
+    <div className=" flex justify-center items-center flex-col">
+      <div className="flex gap-100">
+        <Title
+          title={movieDetail.title}
+          rating={movieDetail.vote_average}
+          date={movieDetail.release_date}
+          popularity={movieDetail.popularity}
+        />
+      </div>
       <div className="flex flex-col items-center justify-center ">
         <div className="flex">
           <Image
@@ -92,7 +94,7 @@ export default async function MovieDetailsPage({
       <div className="flex flex-wrap gap-10  justify-center  items-center mt-10">
         <Text text={"More like this"} />
 
-        <div className="w-[1250px] flex gap-10">
+        <div className=" flex gap-10">
           <MoreLikeThisMovies movies={moreLikeThisMovies.results} />
         </div>
       </div>

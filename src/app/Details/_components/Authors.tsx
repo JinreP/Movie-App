@@ -25,14 +25,14 @@ export function Authors({
         </div>
         <div className="flex gap-10  items-center">
           <span className="font-bold">Writers :</span>
-          {crew.splice(0, 3).map((c) => (
-            <p>{c.name}</p>
+          {crew.splice(0, 3).map((c, i) => (
+            <p key={i}>{c.name}</p>
           ))}
         </div>
         <div className="flex gap-10">
           <span className="font-bold">Top actors : </span>
-          {topCast.map((t) => {
-            return <p>{t.name}</p>;
+          {topCast.map((t, i) => {
+            return <p key={i}>{t.name}</p>;
           })}
         </div>
       </div>

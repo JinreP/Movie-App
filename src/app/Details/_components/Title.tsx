@@ -11,7 +11,7 @@ export function Title({
   popularity: number;
 }) {
   return (
-    <div className="flex px-100 justify-between">
+    <div className="flex justify-between gap-200">
       <div className="flex flex-col">
         <h1 className="text-2xl font-bold">{title}</h1>
         <p className="text-gray-300">{date}</p>
