@@ -31,7 +31,7 @@ export default async function GenreHome({
             </div>
           </div>
           {
-            <Pagination className="mt-10">
+            <Pagination className="mt-10 pl-320">
               <PaginationContent>
                 <PaginationItem>
                   <PaginationPrevious href="#" />
