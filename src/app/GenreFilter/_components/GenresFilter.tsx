@@ -32,7 +32,6 @@ export function GenresFiltering() {
   ];
   return (
     <div className="">
-      {" "}
       <h1 className="text-3xl">Genres</h1>
       <p className="text-gray-500 mt-3">See lists of movies by genre</p>
       <div className=" flex flex-wrap w-[350px] gap-5">

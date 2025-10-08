@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/card";
 import { MovieType } from "@/lib/type";
 import Link from "next/link";
-import Image from "next/image";
 
 export function MovieMap(Props: MovieType) {
   const { title, poster_path, vote_average, id } = Props;
@@ -16,7 +15,6 @@ export function MovieMap(Props: MovieType) {
       <Card className="w-[230px] overflow-hidden  flex flex-col p-0">
         <div className=" h-[340px] w-full">
           <Link href={`/Details/${id}`}>
-
             <img
               src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
               className="  w-full object-cover  h-full"
@@ -27,7 +25,7 @@ export function MovieMap(Props: MovieType) {
         <CardHeader>
           <CardDescription className="flex  items-center">
             <svg
-              className="text-black dark:text-white"
+              className="text-yellow-300 dark:text-white"
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"

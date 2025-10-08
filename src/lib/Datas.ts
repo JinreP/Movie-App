@@ -1,6 +1,8 @@
 // import { initType } from "@/lib/type";
 // import axios from "axios";
 
+import axios from "axios";
+
 // const movieDatas = async (id: string) => {
 //   const detailsData = await axios.get(
 //     `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
@@ -32,3 +34,16 @@
 // const movieAuthorsId: initType = await movieAuthors(id);
 
 // console.log(movieAuthorsId, "sdadada");
+
+export const movieGenres = async () => {
+  const detailsData = await axios.get(
+    `https://api.themoviedb.org/3/genre/movie/list?language=en`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
+        accept: "application/json",
+      },
+    }
+  );
+  return detailsData.data.genres;
+};

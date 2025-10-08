@@ -25,7 +25,7 @@ export function Authors({
         </div>
         <div className="flex gap-10  items-center">
           <span className="font-bold">Writers :</span>
-          {crew.splice(0, 3).map((c, i) => (
+          {crew.splice(4, 3).map((c, i) => (
             <p key={i}>{c.name}</p>
           ))}
         </div>

@@ -35,6 +35,9 @@ export type MoreLike = {
 };
 
 export type AnimationCard = {
+  poster_path: string;
+  vote_average: number;
+  id: string;
   title: string;
   rating: number;
   imageUrl: string;
@@ -67,7 +70,16 @@ export type castType = {
   [x: string]: any;
   id: number;
   name: string;
-  gender: string;
-  job: string;
+    job: string;
   order: number;
+};
+
+// export type initGenre = {
+//   genre: genreType[];
+// };
+
+
+export type genreType = {
+  id: number;
+  name: string;
 };

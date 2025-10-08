@@ -81,3 +81,24 @@ export function MoreLikeThisMovies({ movies }: { movies: MovieType[] }) {
     </div>
   );
 }
+
+
+
+export function genreMovies({ movies }: { movies: MovieType[] }) {
+  return (
+    <div className="flex flex-wrap gap-10 justify-center ml-23 items-center mt-10">
+      <div className="w-[1400px] flex flex-wrap gap-10">
+        {movies?.splice(0, 10).map((movie, i) => (
+          <MovieMap
+            key={i}
+            title={movie.title}
+            poster_path={movie.poster_path}
+            vote_average={movie.vote_average}
+            results={undefined}
+            id={movie.id}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
