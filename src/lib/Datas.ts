@@ -1,7 +1,4 @@
-
-
 import axios from "axios";
-
 
 export const movieGenres = async () => {
   const detailsData = await axios.get(
@@ -26,9 +23,9 @@ export const genreDatas = async (id: string) => {
       },
     }
   );
+
   return genreFilter.data;
 };
-
 
 export const movieDatas = async (id: string) => {
   const detailsData = await axios.get(
@@ -42,7 +39,6 @@ export const movieDatas = async (id: string) => {
   );
   return detailsData.data;
 };
-
 
 export const movieAuthors = async (id: string) => {
   const AuthorsData = await axios.get(
