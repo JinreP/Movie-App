@@ -1,15 +1,7 @@
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
 import { GenresFiltering } from "../_components/GenresFilter";
 import { AnimationCards } from "../_components/CardFiltering";
 import { genreDatas } from "@/lib/Datas";
+import { Paginations } from "../_components/Pagination";
 
 export default async function GenreHome({
   params: { id },
@@ -30,24 +22,8 @@ export default async function GenreHome({
               <AnimationCards movies={genreDetails.results} />
             </div>
           </div>
-          {
-            <Pagination className="mt-10 pl-320">
-              <PaginationContent>
-                <PaginationItem>
-                  <PaginationPrevious href="#" />
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationLink>1</PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationEllipsis />
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationNext />
-                </PaginationItem>
-              </PaginationContent>
-            </Pagination>
-          }
+
+          <Paginations />
         </div>
       </div>
     );
