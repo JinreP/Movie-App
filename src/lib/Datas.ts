@@ -47,3 +47,16 @@ export const movieGenres = async () => {
   );
   return detailsData.data.genres;
 };
+
+export const genreDatas = async (id: string) => {
+  const genreFilter = await axios.get(
+    `https://api.themoviedb.org/3/discover/movie?language=en&with_genres=${id}&page=${1}`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
+        accept: "application/json",
+      },
+    }
+  );
+  return genreFilter.data;
+};

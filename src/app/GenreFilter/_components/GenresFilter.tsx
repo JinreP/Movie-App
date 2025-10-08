@@ -1,46 +1,22 @@
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
+import { movieGenres } from "@/lib/Datas";
+import { genreType } from "@/lib/type";
+import Link from "next/link";
 
-export function GenresFiltering() {
-  const genres = [
-    "Action",
-    "Adventure",
-    "Animation",
-    "Biography",
-    "Comedy",
-    "Crime",
-    "Documentary",
-    "Drama",
-    "Family",
-    "Fantasy",
-    "Film-Noir",
-    "Game-Show",
-    "History",
-    "Horror",
-    "Music",
-    "Musical",
-    "Mystery",
-    "News",
-    "Reality-TV",
-    "Romance",
-    "Sci-FI",
-    "Short",
-    "Sport",
-    "Talk-Show",
-    "Thriller",
-    "War",
-    "Western",
-  ];
+export async function GenresFiltering() {
+  const genres = await movieGenres();
+
   return (
     <div className="">
       <h1 className="text-3xl">Genres</h1>
       <p className="text-gray-500 mt-3">See lists of movies by genre</p>
       <div className=" flex flex-wrap w-[350px] gap-5">
-        {genres.map((genre, index) => (
-          <div className="flex mt-5" key={index}>
-            <div key={index} className="flex text-[14px] items-center ">
-              {genre}
+        {genres.map((genre: genreType) => (
+          <Link href={`/GenreFilter/${genre.id}`} key={genre.id}>
+            <div className="flex items-center gap-2 mt-10">
+              {genre.name}
               <svg
-                className="text-gray-700 dark:text-white pt-[2px] shrink-0"
+                className="text-gray-700 dark:text-white pt-1"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -55,7 +31,7 @@ export function GenresFiltering() {
                 />
               </svg>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
