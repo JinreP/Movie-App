@@ -1,6 +1,6 @@
 import { GenresFiltering } from "../_components/GenresFilter";
 import { AnimationCards } from "../_components/CardFiltering";
-import { genreDatas } from "@/lib/Datas";
+import { genreDatas, movieGenres } from "@/lib/Datas";
 import { Paginations } from "../_components/Pagination";
 
 export default async function GenreHome({
@@ -9,7 +9,10 @@ export default async function GenreHome({
   params: { id: string };
 }) {
   const genreDetails = await genreDatas(id);
-  console.log(genreDetails, " DOTA 2");
+  const genres = await movieGenres();
+
+  console.log(genreDetails, " Genre Details");
+
   {
     return (
       <div className="">
@@ -18,7 +21,7 @@ export default async function GenreHome({
           <div className="flex">
             <GenresFiltering />
             <div className="flex flex-col">
-              <h1 className="text-4xl pl-25">{genreDetails.name}</h1>
+              <h1 className="text-4xl pl-25">{genres[id]?.name}</h1>
               <AnimationCards movies={genreDetails.results} />
             </div>
           </div>

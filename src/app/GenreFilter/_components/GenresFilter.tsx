@@ -1,11 +1,13 @@
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { movieGenres } from "@/lib/Datas";
 import { genreType } from "@/lib/type";
+import { log } from "console";
 import Link from "next/link";
 
 export async function GenresFiltering() {
   const genres = await movieGenres();
-
+  console.log(genres, "genres");
+  
   return (
     <div className="">
       <h1 className="text-3xl">Genres</h1>
