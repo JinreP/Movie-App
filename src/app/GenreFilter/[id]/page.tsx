@@ -21,7 +21,7 @@ export default async function GenreHome({
           <div className="flex">
             <GenresFiltering />
             <div className="flex flex-col">
-              <h1 className="text-4xl pl-25">{genres[id]?.name}</h1>
+              <h1 className="text-4xl pl-25">{genres[2].name}</h1>
               <AnimationCards movies={genreDetails.results} />
             </div>
           </div>
