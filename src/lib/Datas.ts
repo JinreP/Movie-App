@@ -80,3 +80,7 @@ export const searchMovie = async (id: string) => {
   );
   return searchMovies.data;
 };
+
+
+
+  
