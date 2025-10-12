@@ -8,7 +8,7 @@ export function UpComingCard({ movies }: { movies: MovieType[] }) {
     <div className="flex gap-2 ">
       <div className="flex flex-wrap gap-10  justify-center ml-23 items-center mt-10">
         <div className="w-[1400px] flex flex-wrap gap-10">
-          {movies?.splice(0, 10).map((movie, i) => (
+          {movies?.slice(0, 10).map((movie, i) => (
             <MovieMap
               key={i}
               title={movie.title}
@@ -29,7 +29,7 @@ export function PopularMoviesCards({ movies }: { movies: MovieType[] }) {
   return (
     <div className="flex flex-wrap gap-10 justify-center  items-center mt-10">
       <div className="w-[1400px] flex flex-wrap gap-10 ml-23">
-        {movies?.splice(0, 10).map((movie, i) => (
+        {movies?.slice(0, 10).map((movie, i) => (
           <MovieMap
             key={i}
             title={movie.title}
@@ -48,7 +48,7 @@ export function TopRatedCard({ movies }: { movies: MovieType[] }) {
   return (
     <div className="flex flex-wrap gap-10 justify-center ml-23 items-center mt-10">
       <div className="w-[1400px] flex flex-wrap gap-10">
-        {movies?.splice(0, 10).map((movie, i) => (
+        {movies?.slice(0, 10).map((movie, i) => (
           <MovieMap
             key={i}
             title={movie.title}
@@ -67,7 +67,7 @@ export function MoreLikeThisMovies({ movies }: { movies: MovieType[] }) {
   return (
     <div className="flex flex-wrap gap-10 justify-center ml-23 items-center mt-10">
       <div className="w-[1400px] flex flex-wrap gap-10">
-        {movies?.splice(0, 5).map((movie, i) => (
+        {movies?.slice(0, 5).map((movie, i) => (
           <MovieMap
             key={i}
             title={movie.title}
@@ -81,14 +81,12 @@ export function MoreLikeThisMovies({ movies }: { movies: MovieType[] }) {
     </div>
   );
 }
-
-
 
 export function genreMovies({ movies }: { movies: MovieType[] }) {
   return (
     <div className="flex flex-wrap gap-10 justify-center ml-23 items-center mt-10">
       <div className="w-[1400px] flex flex-wrap gap-10">
-        {movies?.splice(0, 10).map((movie, i) => (
+        {movies?.slice(0, 10).map((movie, i) => (
           <MovieMap
             key={i}
             title={movie.title}
@@ -102,7 +100,3 @@ export function genreMovies({ movies }: { movies: MovieType[] }) {
     </div>
   );
 }
-
-
-
-
