@@ -70,7 +70,7 @@ export type castType = {
   [x: string]: any;
   id: number;
   name: string;
-    job: string;
+  job: string;
   order: number;
 };
 
@@ -78,8 +78,14 @@ export type castType = {
 //   genre: genreType[];
 // };
 
-
 export type genreType = {
   id: number;
   name: string;
+};
+
+export type Text = {
+  name: string;
+  id: number;
+  category: string;
+  text: string;
 };

@@ -40,7 +40,7 @@ export default async function Home() {
           <PopularMoviesCards movies={popularMovies.results} />
         </div>
         <div className="flex justify-center flex-col  items-center mt-10">
-          <Text text={"Top Rated"} />
+          <Text text={"TopRated"} />
 
           <TopRatedCard movies={topRatedMovies.results} />
         </div>
