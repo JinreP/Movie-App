@@ -13,9 +13,9 @@ export const movieGenres = async () => {
   return detailsData.data.genres;
 };
 
-export const genreDatas = async (id: string) => {
+export const genreDatas = async (genreId: string, page: string) => {
   const genreFilter = await axios.get(
-    `https://api.themoviedb.org/3/discover/movie?language=en&with_genres=${id}&page=${1}`,
+    `https://api.themoviedb.org/3/discover/movie?language=en&with_genres=${genreId}&page=${page}`,
     {
       headers: {
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
@@ -80,7 +80,3 @@ export const searchMovie = async (id: string) => {
   );
   return searchMovies.data;
 };
-
-
-
-  
