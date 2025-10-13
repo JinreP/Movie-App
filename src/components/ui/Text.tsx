@@ -1,18 +1,21 @@
 import Link from "next/link";
 import { Button } from "./button";
 import { type Text } from "@/lib/type";
-type Props = { text: "Upcoming" | "Popular" | "TopRated" };
+type Props = { text: "Upcoming" | "Popular" | "TopRated" | "More like this" };
 
 export function Text({ text }: Props) {
-  let category = "";
-  if (text === "Upcoming") category = "upcoming";
-  else if (text === "Popular") category = "popular";
-  else category = "top_rated";
-
+  let seeMoreText = "";
+  if (text === "Upcoming") {
+    seeMoreText = "upcoming";
+  } else if (text === "Popular") {
+    seeMoreText = "popular";
+  } else {
+    seeMoreText = "top_rated";
+  }
   return (
     <div className="flex   justify-between gap-270 mt-10">
       <h1 className="text-2xl font-bold">{text}</h1>
-      <Link href={`/more/${text}`}>
+      <Link href={`/more/${seeMoreText}`}>
         <Button variant={"secondary"} className="flex gap-2 items-center">
           See more
           <svg

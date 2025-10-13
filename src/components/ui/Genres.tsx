@@ -10,7 +10,9 @@ export async function Genres() {
     <div className=" flex flex-wrap w-[500px]">
       {genres.map((genre: genreType) => (
         <div className="flex " key={genre.id}>
-          <Link href={`/GenreFilter/${genre.id}`}>
+          <Link
+            href={`/GenreFilter?genreId=${genre.id}&genreName=${genre.name}`}
+          >
             <DropdownMenuItem key={genre.id}>
               {genre.name}
               <svg
