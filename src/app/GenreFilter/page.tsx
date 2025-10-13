@@ -1,5 +1,5 @@
-import { GenresFiltering } from "../../_components/GenresFilter";
-import { AnimationCards } from "../../_components/CardFiltering";
+import { GenresFiltering } from "./_components/GenresFilter";
+import { AnimationCards } from "./_components/CardFiltering";
 import { genreDatas, movieGenres } from "@/lib/Datas";
 type GenrePageDetails = {
   searchParams: Promise<{ genreId: string; genreName: string; page: any }>;
@@ -8,7 +8,6 @@ export default async function GenreHome({ searchParams }: GenrePageDetails) {
   const params = await searchParams;
   const { genreId, genreName, page = 1 } = params;
   const genreDetails = await genreDatas(genreId, page);
-  // const genres = await movieGenres();
 
   console.log(genreDetails, " Genre Details");
 
