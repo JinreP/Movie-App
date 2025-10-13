@@ -1,6 +1,7 @@
 import { GenresFiltering } from "./_components/GenresFilter";
 import { AnimationCards } from "./_components/CardFiltering";
 import { genreDatas, movieGenres } from "@/lib/Datas";
+import { Paginations } from "./_components/Pagination";
 type GenrePageDetails = {
   searchParams: Promise<{ genreId: string; genreName: string; page: any }>;
 };
@@ -24,6 +25,7 @@ export default async function GenreHome({ searchParams }: GenrePageDetails) {
             </div>
           </div>
         </div>
+        <Paginations page={(page, genreId, genreName)} />
       </div>
     );
   }
