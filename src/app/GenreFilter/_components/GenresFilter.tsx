@@ -7,14 +7,17 @@ import Link from "next/link";
 export async function GenresFiltering() {
   const genres = await movieGenres();
   console.log(genres, "genres");
-  
+
   return (
     <div className="">
       <h1 className="text-3xl">Genres</h1>
       <p className="text-gray-500 mt-3">See lists of movies by genre</p>
       <div className=" flex flex-wrap w-[350px] gap-5">
         {genres.map((genre: genreType) => (
-          <Link href={`/GenreFilter/${genre.id}`} key={genre.id}>
+          <Link
+            href={`/GenreFilter?genreId=${genre.id}&genreName=${genre.name}`}
+            key={genre.id}
+          >
             <div className="flex items-center gap-2 mt-10">
               {genre.name}
               <svg
