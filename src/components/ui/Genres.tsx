@@ -11,7 +11,7 @@ export async function Genres() {
       {genres.map((genre: genreType) => (
         <div className="flex " key={genre.id}>
           <Link
-            href={`/GenreFilter?genreId=${genre.id}&genreName=${genre.name}`}
+            href={`/GenreFilter?genreId=${genre.id}&genreName=${genre.name}&page=1`}
           >
             <DropdownMenuItem key={genre.id}>
               {genre.name}

@@ -3,6 +3,7 @@ import {
   TopRatedCard,
   UpComingCard,
 } from "@/components/ui/Cards";
+import { SeeMore } from "@/components/ui/Paginations";
 import axios from "axios";
 
 export default async function CategoryHome({
@@ -37,6 +38,11 @@ export default async function CategoryHome({
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-4xl pr-280">{title}</h1>
         <UpComingCard movies={seeMoreMovies.results} />
+        <SeeMore
+          name={seeMoreMovies.title}
+          id={seeMoreMovies.id}
+          page={seeMoreMovies.page}
+        />
       </div>
     </div>
   );
