@@ -8,12 +8,14 @@ import axios from "axios";
 
 export default async function CategoryHome({
   params: { category },
+  searchParams,
 }: {
   params: { category: string };
+  searchParams: { page?: string };
 }) {
-  const movieDatas = async (category: string) => {
+  const movieDatas = async (category: string, page: number) => {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=1`,
+      `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=${page}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
@@ -22,7 +24,8 @@ export default async function CategoryHome({
     );
     return response.data;
   };
-  const seeMoreMovies = await movieDatas(category);
+  const seeMoreMovies = await movieDatas(category, 1);
+  console.log(seeMoreMovies, "sda");
 
   let title = "";
   if (category === "popular") {
@@ -39,8 +42,8 @@ export default async function CategoryHome({
         <h1 className="text-4xl pr-280">{title}</h1>
         <UpComingCard movies={seeMoreMovies.results} />
         <SeeMore
-          name={seeMoreMovies.name}
-          id={seeMoreMovies.id}
+          category={category}
+          total={seeMoreMovies.total_pages}
           page={seeMoreMovies.page}
         />
       </div>

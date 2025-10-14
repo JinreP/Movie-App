@@ -65,33 +65,39 @@ export function GenreFilterPagination({ page, genreId, genreName }: any) {
   );
 }
 
-export function SeeMore({ page, id, name }: any) {
+export function SeeMore({ page, total, category }: any) {
   return (
     <div className="pl-280 mt-10">
       <Pagination>
         <PaginationContent>
           <PaginationItem>
-            <PaginationPrevious
-              href={`/more?id=${id}&name=${name}&page=${page - 1}`}
-            />
+            <PaginationPrevious href={`/more/${category}?page=${page - 1}`} />
           </PaginationItem>
           <PaginationItem>
-            <PaginationLink href={`/more?id=${id}&name=${name}&page=1`}>
+            <PaginationLink
+              href={`/more?category=${category}&total=${total}&page=1`}
+            >
               1
             </PaginationLink>
           </PaginationItem>
           <PaginationItem>
-            <PaginationLink href={`/more?id=${id}&name=${name}&page=2`}>
+            <PaginationLink
+              href={`/more?category=${category}&total=${total}&page=2`}
+            >
               2
             </PaginationLink>
           </PaginationItem>
           <PaginationItem>
-            <PaginationLink href={`/more?id=${id}&name=${name}&page=3`}>
+            <PaginationLink
+              href={`/more?category=${category}&total=${total}&page=3`}
+            >
               3
             </PaginationLink>
           </PaginationItem>
           <PaginationItem>
-            <PaginationLink href={`/more?id=${id}&name=${name}&page=4`}>
+            <PaginationLink
+              href={`/more?category=${category}&total=${total}&page=4`}
+            >
               4
             </PaginationLink>
           </PaginationItem>
@@ -100,9 +106,7 @@ export function SeeMore({ page, id, name }: any) {
             <PaginationEllipsis />
           </PaginationItem>
           <PaginationItem>
-            <PaginationNext
-              href={`/more?id=${id}&name=${name}&page=${page + 1}`}
-            />
+            <PaginationNext href={`/more/${category}?page=${page + 1}`} />
           </PaginationItem>
         </PaginationContent>
       </Pagination>
