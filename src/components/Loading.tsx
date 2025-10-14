@@ -2,6 +2,7 @@
 
 import { movieDatas } from "@/lib/Datas";
 import useSWR from "swr";
+import { HomeSkeleton } from "./skeleton/Home";
 
 export function Loading({
   category,
@@ -17,6 +18,6 @@ export function Loading({
   );
 
   if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
+  if (isLoading) return <HomeSkeleton />;
   return <div>hello {data.name}!</div>;
 }
