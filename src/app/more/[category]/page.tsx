@@ -39,7 +39,7 @@ export default async function CategoryHome({
         <h1 className="text-4xl pr-280">{title}</h1>
         <UpComingCard movies={seeMoreMovies.results} />
         <SeeMore
-          name={seeMoreMovies.title}
+          name={seeMoreMovies.name}
           id={seeMoreMovies.id}
           page={seeMoreMovies.page}
         />
