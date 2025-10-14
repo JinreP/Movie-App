@@ -41,11 +41,7 @@ export default async function CategoryHome({
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-4xl pr-280">{title}</h1>
         <UpComingCard movies={seeMoreMovies.results} />
-        <SeeMore
-          category={category}
-          total={seeMoreMovies.total_pages}
-          page={seeMoreMovies.page}
-        />
+        <SeeMore category={category} page={seeMoreMovies.page} />
       </div>
     </div>
   );

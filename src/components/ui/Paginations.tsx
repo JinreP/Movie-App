@@ -65,41 +65,25 @@ export function GenreFilterPagination({ page, genreId, genreName }: any) {
   );
 }
 
-export function SeeMore({ page, total, category }: any) {
+export function SeeMore({ page, category }: any) {
   return (
-    <div className="pl-280 mt-10">
+    <div className="pl-240 mt-10">
       <Pagination>
         <PaginationContent>
           <PaginationItem>
             <PaginationPrevious href={`/more/${category}?page=${page - 1}`} />
           </PaginationItem>
           <PaginationItem>
-            <PaginationLink
-              href={`/more?category=${category}&total=${total}&page=1`}
-            >
-              1
-            </PaginationLink>
+            <PaginationLink href={`/more/${category}?page=1`}>1</PaginationLink>
           </PaginationItem>
           <PaginationItem>
-            <PaginationLink
-              href={`/more?category=${category}&total=${total}&page=2`}
-            >
-              2
-            </PaginationLink>
+            <PaginationLink href={`/more/${category}?page=2`}>2</PaginationLink>
           </PaginationItem>
           <PaginationItem>
-            <PaginationLink
-              href={`/more?category=${category}&total=${total}&page=3`}
-            >
-              3
-            </PaginationLink>
+            <PaginationLink href={`/more/${category}?page=3`}>3</PaginationLink>
           </PaginationItem>
           <PaginationItem>
-            <PaginationLink
-              href={`/more?category=${category}&total=${total}&page=4`}
-            >
-              4
-            </PaginationLink>
+            <PaginationLink href={`/more/${category}?page=4`}>4</PaginationLink>
           </PaginationItem>
 
           <PaginationItem>
