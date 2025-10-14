@@ -1,14 +1,9 @@
-import {
-  PopularMoviesCards,
-  TopRatedCard,
-  UpComingCard,
-} from "@/components/ui/Cards";
+import { Loading } from "@/components/Loading";
+import { UpComingCard } from "@/components/ui/Cards";
 import { SeeMore } from "@/components/ui/Paginations";
 import axios from "axios";
-
 export default async function CategoryHome({
   params: { category },
-  searchParams,
 }: {
   params: { category: string };
   searchParams: { page?: string };
@@ -42,6 +37,7 @@ export default async function CategoryHome({
         <h1 className="text-4xl pr-280">{title}</h1>
         <UpComingCard movies={seeMoreMovies.results} />
         <SeeMore category={category} page={seeMoreMovies.page} />
+        <Loading category={category} page={seeMoreMovies.page} />
       </div>
     </div>
   );
