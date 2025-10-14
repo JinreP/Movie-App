@@ -45,12 +45,9 @@ export function FeaturedMovie(props: Props) {
           </p>
 
           <p className="mt-4 max-w-[600px]">{description}</p>
-            <Button
-              variant="secondary"
-              className="mt-5 flex items-center gap-2"
-            >
-              ▶ Watch Trailer
-            </Button>
+          <Button variant="secondary" className="mt-5 flex items-center gap-2">
+            ▶ Watch Trailer
+          </Button>
         </div>
       </section>
     </div>
