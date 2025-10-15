@@ -4,9 +4,10 @@ import { SeeMore } from "@/components/ui/Paginations";
 import axios from "axios";
 export default async function CategoryHome({
   params: { category },
+  searchParams: { page },
 }: {
   params: { category: string };
-  searchParams: { page?: string };
+  searchParams: { page: number };
 }) {
   const movieDatas = async (category: string, page: number) => {
     const response = await axios.get(
@@ -19,8 +20,8 @@ export default async function CategoryHome({
     );
     return response.data;
   };
-  const seeMoreMovies = await movieDatas(category, 1);
-  console.log(seeMoreMovies, "sda");
+  const seeMoreMovies = await movieDatas(category, page);
+  console.log(seeMoreMovies, "see more movies");
 
   let title = "";
   if (category === "popular") {
@@ -37,8 +38,8 @@ export default async function CategoryHome({
         <h1 className="text-4xl pr-280">{title}</h1>
         <UpComingCard movies={seeMoreMovies.results} />
         <SeeMore category={category} page={seeMoreMovies.page} />
-        <Loading category={category} page={seeMoreMovies.page} />
       </div>
+      <Loading category={category} page={seeMoreMovies.page}></Loading>
     </div>
   );
 }

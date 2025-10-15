@@ -89,3 +89,9 @@ export type Text = {
   category: string;
   text: string;
 };
+
+export type User = {
+  name: string;
+  id: number;
+  image: string;
+};

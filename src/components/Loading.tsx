@@ -1,16 +1,9 @@
 "use client";
-
 import { movieDatas } from "@/lib/Datas";
 import useSWR from "swr";
 import { HomeSkeleton } from "./skeleton/Home";
 
-export function Loading({
-  category,
-  page,
-}: {
-  category: string;
-  page: number;
-}) {
+export function Loading({ category, page }: any) {
   const fetcher = () => movieDatas(category);
   const { data, error, isLoading } = useSWR(
     `/api/movies?category=${category}&page=${page}`,
