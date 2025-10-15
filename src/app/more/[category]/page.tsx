@@ -1,4 +1,3 @@
-import { Loading } from "@/components/Loading";
 import { UpComingCard } from "@/components/ui/Cards";
 import { SeeMore } from "@/components/ui/Paginations";
 import axios from "axios";
@@ -7,20 +6,27 @@ export default async function CategoryHome({
   searchParams: { page },
 }: {
   params: { category: string };
-  searchParams: { page: number };
+  searchParams: { page?: string };
 }) {
   const movieDatas = async (category: string, page: number) => {
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=${page}`,
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
-        },
-      }
-    );
-    return response.data;
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    try {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=${page}`,
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
+          },
+        }
+      );
+      return response.data;
+    } catch (err) {
+      throw err;
+    }
   };
-  const seeMoreMovies = await movieDatas(category, page);
+  const currentPage = page ? parseInt(page) : 1;
+  const seeMoreMovies = await movieDatas(category, currentPage);
   console.log(seeMoreMovies, "see more movies");
 
   let title = "";
@@ -39,7 +45,6 @@ export default async function CategoryHome({
         <UpComingCard movies={seeMoreMovies.results} />
         <SeeMore category={category} page={seeMoreMovies.page} />
       </div>
-      <Loading category={category} page={seeMoreMovies.page}></Loading>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 import { movieDatas } from "@/lib/Datas";
 import useSWR from "swr";
-import { HomeSkeleton } from "./skeleton/Home";
+import { MoreSkeleton } from "./skeleton/MoreSkeleton";
 
 export function Loading({ category, page }: any) {
   const fetcher = () => movieDatas(category);
@@ -11,6 +11,6 @@ export function Loading({ category, page }: any) {
   );
 
   if (error) return <div>failed to load</div>;
-  if (isLoading) return <HomeSkeleton />;
+  if (isLoading) return <MoreSkeleton count={10} />;
   return <div>hello {data.name}!</div>;
 }
