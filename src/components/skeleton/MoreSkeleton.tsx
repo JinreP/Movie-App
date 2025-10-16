@@ -8,6 +8,7 @@ export function MoreSkeleton({ count = 10 }: { count: number }) {
           <Skeleton className="h-[340px] w-full rounded-md" />
         </div>
       ))}
+      <Skeleton className="w-[350px] h-[50px] ml-240" />
     </div>
   );
 }

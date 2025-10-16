@@ -1,10 +1,10 @@
-import { Skeleton } from "../ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function HomeSkeleton({ count }: any) {
   return (
     <div className=" w-full   h-screen bg-no-repeat  ">
       <div className="mb-2">
-        <Skeleton className="w-full h-[600px] mb-12" />
+        <Skeleton className="w-full h-[600px] mb-10" />
       </div>
       <div className="flex gap-252 ml-115">
         <Skeleton className="w-[200px] h-[50px] " />

@@ -1,5 +1,5 @@
-import { Loading } from "@/components/Loading";
+import { SeeMoreLoading } from "@/components/Loading";
 
 export default function LoadingPage() {
-  return <Loading category="popular" page={1} />;
+  return <SeeMoreLoading category="popular" page={1} />;
 }
