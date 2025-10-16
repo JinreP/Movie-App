@@ -1,13 +1,11 @@
-// "use client";
+"use client";
 
-// import axios from "axios";
+import axios from "axios";
 
-// type TrailerProps = {
-//   movieId: number;
-// };
+type TrailerProps = {
+  movieId: number;
+};
 
-// export function Trailer({ movieId }: TrailerProps) {
-
-//   }
-//   return <div></div>;
-// }
+export function Trailer({ movieId }: TrailerProps) {
+  return <div></div>;
+}

@@ -2,6 +2,7 @@
 
 import { Props } from "@/lib/type";
 import { Button } from "./button";
+import ReactPlayer from "react-player";
 import {
   Carousel,
   CarouselContent,
@@ -10,26 +11,27 @@ import {
   CarouselPrevious,
 } from "./carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { Dialog, DialogContent, DialogTrigger } from "@radix-ui/react-dialog";
-import { getTrailer } from "@/lib/Datas";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useState } from "react";
+import { movieTrailer } from "@/lib/Datas";
+import { DialogTitle } from "@radix-ui/react-dialog";
 
 export function FeaturedMovie(props: Props) {
-  // const [trailer, setTrailer] = useState<any>(null);
-
-  // async function WatchTrailer(movieId: number) {
-  //   const trailerData = await getTrailer(movieId, "en");
-
-  //   const traile =
-  //     trailerData?.results?.find(
-  //       (v: any) => v.type === "Trailer" && v.site === "YouTube"
-  //     ) || trailerData.results;
-
-  //   setTrailer(traile.key);
-  // }
-
-  const { title, description, vote_average, backdrop_path } = props;
-
+  const { title, description, vote_average, backdrop_path, id } = props;
+  const [trailers, setTrailers] = useState<string | null>(null);
+  const handleTrailer = async () => {
+    try {
+      const trailerUrl = await movieTrailer(id);
+      const trailer = trailerUrl?.results?.find(
+        (t: any) => t.site === "YouTube" && t.type === "Trailer"
+      );
+      if (trailer) {
+        setTrailers(`https://www.youtube.com/watch?v=${trailer.key}`);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div>
       <section
@@ -61,9 +63,10 @@ export function FeaturedMovie(props: Props) {
           </p>
 
           <p className="mt-4 max-w-[600px]">{description}</p>
-          {/* <Dialog>
-            <DialogTrigger>
+          <Dialog>
+            <DialogTrigger asChild>
               <Button
+                onClick={handleTrailer}
                 variant="secondary"
                 className="mt-5 flex items-center gap-2"
               >
@@ -72,18 +75,20 @@ export function FeaturedMovie(props: Props) {
             </DialogTrigger>
 
             <DialogContent>
-              <div className="flex justify-center items-center">
-                <iframe
-                  width="100%"
-                  height="90%"
-                  src={`https://www.youtube.com/embed/${trailer}`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="rounded-xl"
-                />
-              </div>
+              {trailers && (
+                <div className="flex justify-center items-center  aspect-video">
+                  <ReactPlayer
+                    src={trailers}
+                    width="100%"
+                    height="100%"
+                    controls
+                    playing
+                  />
+                </div>
+              )}
+              <DialogTitle>SS</DialogTitle>
             </DialogContent>
-          </Dialog> */}
+          </Dialog>
         </div>
       </section>
     </div>
@@ -109,6 +114,7 @@ export function HeroMap({ hero }: { hero: Props[] | undefined }) {
                 text={movie.text}
                 description={movie.overview}
                 key={i}
+                id={movie.id}
                 title={movie.title}
                 vote_average={movie.vote_average}
                 backdrop_path={movie.backdrop_path}

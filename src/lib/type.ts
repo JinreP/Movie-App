@@ -9,6 +9,7 @@ export type Props = {
   overview: string;
   title: string | null | undefined;
   text: string;
+  id: string;
   description: string;
   backdrop_path: string;
   vote_average: number;
