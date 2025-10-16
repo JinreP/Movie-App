@@ -15,18 +15,18 @@ import { getTrailer } from "@/lib/Datas";
 import { useState } from "react";
 
 export function FeaturedMovie(props: Props) {
-  const [trailer, setTrailer] = useState<any>(null);
+  // const [trailer, setTrailer] = useState<any>(null);
 
-  async function WatchTrailer(movieId: number) {
-    const trailerData = await getTrailer(movieId, "en");
+  // async function WatchTrailer(movieId: number) {
+  //   const trailerData = await getTrailer(movieId, "en");
 
-    const traile =
-      trailerData?.results?.find(
-        (v: any) => v.type === "Trailer" && v.site === "YouTube"
-      ) || trailerData.results;
+  //   const traile =
+  //     trailerData?.results?.find(
+  //       (v: any) => v.type === "Trailer" && v.site === "YouTube"
+  //     ) || trailerData.results;
 
-    setTrailer(traile.key);
-  }
+  //   setTrailer(traile.key);
+  // }
 
   const { title, description, vote_average, backdrop_path } = props;
 
@@ -61,7 +61,7 @@ export function FeaturedMovie(props: Props) {
           </p>
 
           <p className="mt-4 max-w-[600px]">{description}</p>
-          <Dialog>
+          {/* <Dialog>
             <DialogTrigger>
               <Button
                 variant="secondary"
@@ -83,7 +83,7 @@ export function FeaturedMovie(props: Props) {
                 />
               </div>
             </DialogContent>
-          </Dialog>
+          </Dialog> */}
         </div>
       </section>
     </div>

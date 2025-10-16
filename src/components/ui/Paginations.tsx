@@ -8,7 +8,15 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-export function GenreFilterPagination({ page, genreId, genreName }: any) {
+export function GenreFilterPagination({
+  page,
+  genreId,
+  genreName,
+}: {
+  page: number;
+  genreId?: string;
+  genreName: string;
+}) {
   return (
     <div className="pl-280 mt-10">
       <Pagination>
