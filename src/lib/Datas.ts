@@ -1,4 +1,13 @@
 import axios from "axios";
+const fetcher = async (url: string) => {
+  const res = await axios.get(url, {
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
+    },
+  });
+  return res.data;
+};
 
 export const movieGenres = async () => {
   const detailsData = await axios.get(
@@ -79,4 +88,10 @@ export const searchMovie = async (id: string) => {
     }
   );
   return searchMovies.data;
+};
+
+export const getTrailer = async (id: number, number: any) => {
+  return fetcher(
+    `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`
+  );
 };

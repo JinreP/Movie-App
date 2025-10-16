@@ -10,8 +10,24 @@ import {
   CarouselPrevious,
 } from "./carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { Dialog, DialogContent, DialogTrigger } from "@radix-ui/react-dialog";
+import { getTrailer } from "@/lib/Datas";
+import { useState } from "react";
 
 export function FeaturedMovie(props: Props) {
+  const [trailer, setTrailer] = useState<any>(null);
+
+  async function WatchTrailer(movieId: number) {
+    const trailerData = await getTrailer(movieId, "en");
+
+    const traile =
+      trailerData?.results?.find(
+        (v: any) => v.type === "Trailer" && v.site === "YouTube"
+      ) || trailerData.results;
+
+    setTrailer(traile.key);
+  }
+
   const { title, description, vote_average, backdrop_path } = props;
 
   return (
@@ -45,9 +61,29 @@ export function FeaturedMovie(props: Props) {
           </p>
 
           <p className="mt-4 max-w-[600px]">{description}</p>
-          <Button variant="secondary" className="mt-5 flex items-center gap-2">
-            ▶ Watch Trailer
-          </Button>
+          <Dialog>
+            <DialogTrigger>
+              <Button
+                variant="secondary"
+                className="mt-5 flex items-center gap-2"
+              >
+                ▶ Watch Trailer
+              </Button>
+            </DialogTrigger>
+
+            <DialogContent>
+              <div className="flex justify-center items-center">
+                <iframe
+                  width="100%"
+                  height="90%"
+                  src={`https://www.youtube.com/embed/${trailer}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="rounded-xl"
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
     </div>

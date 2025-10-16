@@ -1,6 +1,13 @@
-import ReactPlayer from "react-player";
-export function Trailer() {
-    return <div>
-    
-    </div>
-}
+// "use client";
+
+// import axios from "axios";
+
+// type TrailerProps = {
+//   movieId: number;
+// };
+
+// export function Trailer({ movieId }: TrailerProps) {
+
+//   }
+//   return <div></div>;
+// }

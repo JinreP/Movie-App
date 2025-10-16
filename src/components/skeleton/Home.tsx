@@ -2,11 +2,11 @@ import { Skeleton } from "../ui/skeleton";
 
 export function HomeSkeleton({ count }: any) {
   return (
-    <div className=" w-full   h-screen bg-no-repeat  ">
+    <div className=" w-full min-h-screen bg-no-repeat  ">
       <div className="mb-2">
         <Skeleton className="w-full h-[600px] mb-12" />
       </div>
-      <div className="flex gap-252 ml-115">
+      <div className="flex gap-252  ml-25">
         <Skeleton className="w-[200px] h-[50px] " />
         <Skeleton className="w-[100px] h-[50px] " />
       </div>
@@ -17,7 +17,7 @@ export function HomeSkeleton({ count }: any) {
           </div>
         ))}
       </div>
-      <div className="flex gap-252 ml-115 mt-10">
+      <div className="flex gap-252 ml-25 mt-10">
         <Skeleton className="w-[200px] h-[50px] " />
         <Skeleton className="w-[100px] h-[50px] " />
       </div>
@@ -28,7 +28,7 @@ export function HomeSkeleton({ count }: any) {
           </div>
         ))}
       </div>
-      <div className="flex gap-252 ml-115 mt-10">
+      <div className="flex gap-252  ml-25 mt-10">
         <Skeleton className="w-[200px] h-[50px] " />
         <Skeleton className="w-[100px] h-[50px] " />
       </div>
