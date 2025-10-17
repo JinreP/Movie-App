@@ -103,7 +103,7 @@ export function HeroMap({ hero }: { hero: Props[] | undefined }) {
       <Carousel
         plugins={[
           Autoplay({
-            delay: 5000,
+            delay: 2000,
           }),
         ]}
       >
