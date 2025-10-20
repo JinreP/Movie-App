@@ -3,11 +3,16 @@ import { AnimationCards } from "./_components/CardFiltering";
 import { genreDatas, movieGenres } from "@/lib/Datas";
 import { GenreFilterPagination } from "../../components/ui/Paginations";
 type GenrePageDetails = {
-  searchParams: Promise<{ genreId: string; genreName: string; page: any }>;
+  searchParams: Promise<{
+    genreId: string;
+    genreName: string;
+    page: any;
+    total_pages: number;
+  }>;
 };
 export default async function GenreHome({ searchParams }: GenrePageDetails) {
   const params = await searchParams;
-  const { genreId, genreName, page = 1 } = params;
+  const { genreId, genreName, page = 1, total_pages } = params;
   const genreDetails = await genreDatas(genreId, page);
 
   console.log(genreDetails, " Genre Details");
@@ -31,6 +36,7 @@ export default async function GenreHome({ searchParams }: GenrePageDetails) {
           page={page}
           genreName={genreName}
           genreId={genreId}
+          total={total_pages}
         />
       </div>
     );

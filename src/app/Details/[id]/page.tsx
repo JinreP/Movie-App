@@ -43,6 +43,7 @@ export default async function MovieDetailsPage({
         <div className="flex">
           <Image
             poster_path={movieDetail.poster_path}
+            id={movieDetail.id}
             backdrop_path={movieDetail.backdrop_path}
           />
         </div>

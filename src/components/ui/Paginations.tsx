@@ -12,10 +12,12 @@ export function GenreFilterPagination({
   page,
   genreId,
   genreName,
+  total,
 }: {
   page: number;
   genreId?: string;
   genreName: string;
+  total: number;
 }) {
   return (
     <div className="pl-280 mt-10">
@@ -56,7 +58,11 @@ export function GenreFilterPagination({
               4
             </PaginationLink>
           </PaginationItem>
-
+          <PaginationLink
+            href={`/GenreFilter?genreId=${genreId}&genreName=${genreName}&page=${total}`}
+          >
+            {total}
+          </PaginationLink>
           <PaginationItem>
             <PaginationEllipsis />
           </PaginationItem>
@@ -73,7 +79,15 @@ export function GenreFilterPagination({
   );
 }
 
-export function SeeMore({ page, category, total }: any) {
+export function SeeMore({
+  page,
+  category,
+  total,
+}: {
+  page: number;
+  category: string;
+  total: number;
+}) {
   return (
     <div className="pl-240 mt-10">
       <Pagination>

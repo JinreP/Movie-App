@@ -13,7 +13,7 @@ export function Text({ text }: Props) {
     seeMoreText = "top_rated";
   }
   return (
-    <div className="flex   justify-between gap-260 mt-10">
+    <div className="flex   justify-between gap-275 mt-10">
       <h1 className="text-2xl font-bold">{text}</h1>
       <Link href={`/more/${seeMoreText}`}>
         <Button variant={"secondary"} className="flex gap-2 items-center">
