@@ -1,3 +1,55 @@
+// "use client";
+// import {
+//   Card,
+//   CardDescription,
+//   CardHeader,
+//   CardTitle,
+// } from "@/components/ui/card";
+// import { MovieType } from "@/lib/type";
+// import Link from "next/link";
+
+// export function MovieMap(Props: MovieType) {
+//   const { title, poster_path, vote_average, id } = Props;
+//   return (
+//     <div className="flex gap-2 ">
+//       <Card className="w-[230px] overflow-hidden  flex flex-col p-0">
+//         <div className=" h-[340px] w-full">
+//           <Link href={`/Details/${id}`}>
+//             <img
+//               src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+//               className="  w-full object-cover  h-full"
+//               alt={title}
+//             />
+//           </Link>
+//         </div>
+//         <CardHeader>
+//           <CardDescription className="flex  items-center">
+//             <svg
+//               className="text-yellow-300 dark:text-white"
+//               xmlns="http://www.w3.org/2000/svg"
+//               width="16"
+//               height="16"
+//               viewBox="0 0 16 16"
+//               fill="none"
+//             >
+//               <path
+//                 d="M7.99967 1.33337L10.0597 5.50671L14.6663 6.18004L11.333 9.42671L12.1197 14.0134L7.99967 11.8467L3.87967 14.0134L4.66634 9.42671L1.33301 6.18004L5.93967 5.50671L7.99967 1.33337Z"
+//                 fill="currentColor"
+//                 stroke="currentColor"
+//                 strokeLinecap="round"
+//                 strokeLinejoin="round"
+//               />
+//             </svg>
+//             {vote_average} <span className="text-gray-300">/10</span>
+//           </CardDescription>
+
+//           <CardTitle className="mb-6">{title}</CardTitle>
+//         </CardHeader>
+//       </Card>
+//     </div>
+//   );
+// }
+
 "use client";
 import {
   Card,
@@ -10,42 +62,27 @@ import Link from "next/link";
 
 export function MovieMap(Props: MovieType) {
   const { title, poster_path, vote_average, id } = Props;
-  return (
-    <div className="flex gap-2 ">
-      <Card className="w-[230px] overflow-hidden  flex flex-col p-0">
-        <div className=" h-[340px] w-full">
-          <Link href={`/Details/${id}`}>
-            <img
-              src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-              className="  w-full object-cover  h-full"
-              alt={title}
-            />
-          </Link>
-        </div>
-        <CardHeader>
-          <CardDescription className="flex  items-center">
-            <svg
-              className="text-yellow-300 dark:text-white"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M7.99967 1.33337L10.0597 5.50671L14.6663 6.18004L11.333 9.42671L12.1197 14.0134L7.99967 11.8467L3.87967 14.0134L4.66634 9.42671L1.33301 6.18004L5.93967 5.50671L7.99967 1.33337Z"
-                fill="currentColor"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            {vote_average} <span className="text-gray-300">/10</span>
-          </CardDescription>
 
-          <CardTitle className="mb-6">{title}</CardTitle>
-        </CardHeader>
-      </Card>
-    </div>
+  return (
+    <Card className="max-w-[230px] w-full overflow-hidden flex flex-col p-0">
+      <div className="h-[340px] w-full">
+        <Link href={`/Details/${id}`}>
+          <img
+            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+            className="w-full h-full object-cover"
+            alt={title}
+          />
+        </Link>
+      </div>
+
+      <CardHeader>
+        <CardDescription className="flex items-center gap-1">
+          ⭐ {vote_average}
+          <span className="text-gray-300">/10</span>
+        </CardDescription>
+
+        <CardTitle className="mb-6">{title}</CardTitle>
+      </CardHeader>
+    </Card>
   );
 }
