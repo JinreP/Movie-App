@@ -1,11 +1,9 @@
-import { HeroMap } from "@/components/ui/Hero";
+
 import { Text } from "@/components/Text";
-import {
-  PopularMoviesCards,
-  TopRatedCard,
-  UpComingCard,
-} from "@/components/ui/Cards";
+
 import axios from "axios";
+import { PopularMoviesCards, TopRatedCard, UpComingCard } from "@/components/Cards";
+import { HeroMap } from "@/components/Hero";
 export default async function Home() {
   const movieDatas = async (category: string) => {
     const response = await axios.get(

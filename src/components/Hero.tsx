@@ -1,20 +1,21 @@
 "use client";
 
 import { Props } from "@/lib/type";
-import { Button } from "./button";
+import { Button } from "./ui/button";
 import ReactPlayer from "react-player";
+
+import Autoplay from "embla-carousel-autoplay";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { useState } from "react";
+import { movieTrailer } from "@/lib/Datas";
+import { DialogTitle } from "@radix-ui/react-dialog";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "./carousel";
-import Autoplay from "embla-carousel-autoplay";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { useState } from "react";
-import { movieTrailer } from "@/lib/Datas";
-import { DialogTitle } from "@radix-ui/react-dialog";
+} from "./ui/carousel";
 
 export function FeaturedMovie(props: Props) {
   const { title, description, vote_average, backdrop_path, id } = props;

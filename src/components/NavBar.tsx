@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -10,8 +11,17 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Genres } from "@/components/Genres";
 import { Theme } from "./Theme";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export function NavBar() {
+  const router = useRouter();
+  const [value, setValue] = useState("");
+
+  const handleSearch = () => {
+    if (!value.trim()) return;
+    router.push(`/Search?query=${value}&page=1`);
+  };
   return (
     <div className="flex gap-2 w-full h-20  items-center justify-around">
       <div className="flex gap-5 items-center  justify-center">
@@ -76,6 +86,8 @@ export function NavBar() {
         <div className="relative">
           <Input
             type="text"
+            onChange={(e) => setValue(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleSearch()}
             className="w-[500px] pl-15  h-[45px]"
             placeholder="Search you're movie"
           />

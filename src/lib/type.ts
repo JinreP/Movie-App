@@ -96,3 +96,10 @@ export type User = {
   id: number;
   image: string;
 };
+
+export type SearchPageProps = {
+  searchParams: {
+    query?: string;
+    page?: string;
+  };
+};

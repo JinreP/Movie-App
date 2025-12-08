@@ -67,10 +67,9 @@ export const moreLikeThis = async (id: string) => {
   return moreLikeThisMovie.data;
 };
 
-export const searchMovie = async (id: string) => {
-  const searchMovies = await axios.get(
-    `https://api.themoviedb.org/3/movie/search/movie?query=${id}&language=en-US&page=${1}
-`,
+export const searchMovie = async (query: string, page: number = 1) => {
+  const searchResults = await axios.get(
+    `https://api.themoviedb.org/3/search/movie?query=${query}&language=en-US&page=${page}`,
     {
       headers: {
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
@@ -78,7 +77,7 @@ export const searchMovie = async (id: string) => {
       },
     }
   );
-  return searchMovies.data;
+  return searchResults.data;
 };
 
 export const movieTrailer = async (id: string) => {
@@ -93,4 +92,17 @@ export const movieTrailer = async (id: string) => {
     }
   );
   return searchTrailer.data;
+};
+
+export const searchMovies = async (query: string, page: number = 1) => {
+  const searchResults = await axios.get(
+    `https://api.themoviedb.org/3/search/movie?query=${query}&language=en-US&page=${page}`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
+        accept: "application/json",
+      },
+    }
+  );
+  return searchResults.data;
 };
