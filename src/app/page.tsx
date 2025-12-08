@@ -1,5 +1,5 @@
 import { HeroMap } from "@/components/ui/Hero";
-import { Text } from "@/components/ui/Text";
+import { Text } from "@/components/Text";
 import {
   PopularMoviesCards,
   TopRatedCard,

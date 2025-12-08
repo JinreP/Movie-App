@@ -1,12 +1,13 @@
 import { Title } from "@/app/Details/_components/Title";
-import { Text } from "@/components/ui/Text";
+import { Text } from "@/components/Text";
 import { Genres } from "../_components/Genre";
 import { Desc } from "../_components/Desc";
 import { Authors } from "../_components/Authors";
 import { Image } from "../_components/Image";
 import { castType, crewType, initType } from "@/lib/type";
-import { MoreLikeThisMovies } from "@/components/ui/Cards";
+
 import { moreLikeThis, movieAuthors, movieDatas } from "@/lib/Datas";
+import { MoreLikeThisMovies } from "@/components/Cards";
 export default async function MovieDetailsPage({
   params: { id },
 }: {

@@ -8,7 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Genres } from "@/components/ui/Genres";
+import { Genres } from "@/components/Genres";
 import { Theme } from "./Theme";
 
 export function NavBar() {

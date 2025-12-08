@@ -1,5 +1,5 @@
 import { MovieType } from "@/lib/type";
-import { MovieMap } from "./MovieMap";
+import { MovieMap } from "../MovieMap";
 
 export function UpComingCard({ movies }: { movies: MovieType[] }) {
   console.log("hello ssss", movies);

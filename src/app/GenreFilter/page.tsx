@@ -1,7 +1,7 @@
 import { GenresFiltering } from "./_components/GenresFilter";
 import { AnimationCards } from "./_components/CardFiltering";
 import { genreDatas, movieGenres } from "@/lib/Datas";
-import { GenreFilterPagination } from "../../components/ui/Paginations";
+import { GenreFilterPagination } from "../../components/Paginations";
 type GenrePageDetails = {
   searchParams: Promise<{
     genreId: string;
