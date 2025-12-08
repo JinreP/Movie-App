@@ -13,8 +13,12 @@ import { Genres } from "@/components/Genres";
 import { Theme } from "./Theme";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { SearchListItem } from "./SearchListItem";
+import { searchMovies } from "@/lib/Datas";
 
 export function NavBar() {
+  const [results, setResults] = useState<any[]>([]);
+
   const router = useRouter();
   const [value, setValue] = useState("");
 
@@ -22,6 +26,21 @@ export function NavBar() {
     if (!value.trim()) return;
     router.push(`/Search?query=${value}&page=1`);
   };
+
+  async function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const search = e.target.value;
+    setValue(search);
+
+    if (search.length < 2) {
+      setResults([]);
+      return;
+    }
+
+    const res = await searchMovies(search, 1);
+
+    setResults(res.results.slice(0, 5));
+  }
+
   return (
     <div className="flex gap-2 w-full h-20  items-center justify-around">
       <div className="flex gap-5 items-center  justify-center">
@@ -86,7 +105,7 @@ export function NavBar() {
         <div className="relative">
           <Input
             type="text"
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleInputChange}
             onKeyDown={(e) => e.key === "Enter" && handleSearch()}
             className="w-[500px] pl-15  h-[45px]"
             placeholder="Search you're movie"
@@ -106,6 +125,13 @@ export function NavBar() {
               />
             </g>
           </svg>
+          {results.length > 0 && (
+            <div className="absolute bg-black border border-gray-800 mt-2 w-[500px] rounded-xl ">
+              {results.map((movie) => (
+                <SearchListItem key={movie.id} movie={movie} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
 

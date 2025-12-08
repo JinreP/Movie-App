@@ -9,7 +9,7 @@ export function SearchListItem({ movie }: { movie: any }) {
           src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`}
           alt={movie.title}
           width={70}
-          height={100}
+          height={50}
           className="rounded-md"
         />
 
