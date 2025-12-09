@@ -3,7 +3,7 @@ import { Skeleton } from "../ui/skeleton";
 export function GenreSkeleton({ count = 12 }: { count: number }) {
   return (
     <div className="flex justify-center  mt-10">
-      <div className="flex w-full  gap-20">
+      <div className="flex w-full  gap-100 ml-60">
         <div className="w-[260px]">
           <Skeleton className="h-10 w-32 mb-2" />
           <Skeleton className="h-6 w-48 mb-6" />

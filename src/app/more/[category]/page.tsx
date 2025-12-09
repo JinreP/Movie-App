@@ -1,4 +1,5 @@
-import { UpComingCard } from "@/components/ui/Cards";
+
+import { UpComingCard } from "@/components/Cards";
 import { SeeMore } from "@/components/Paginations";
 import axios from "axios";
 export default async function CategoryHome({
