@@ -14,7 +14,7 @@ export function Title({
     <div className="flex justify-between gap-200">
       <div className="flex flex-col">
         <h1 className="text-2xl font-bold">{title}</h1>
-        <p className="text-gray-300">{date}</p>
+        <p className="text-gray-300">{date.toLocaleDateString()}</p>
       </div>
       <div className="flex flex-col">
         <p className="">Rating</p>
