@@ -1,13 +1,15 @@
 import { Search } from "./_components/Search";
 
-export default function SearchPage({
+export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: { query?: string; page?: string };
+  searchParams: Promise<{ query?: string; page?: string }>;
 }) {
+  const params = await searchParams;
+
   return (
     <div className="">
-      <Search searchParams={searchParams} />
+      <Search searchParams={params} />
     </div>
   );
 }

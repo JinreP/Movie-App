@@ -1,14 +1,17 @@
-
 import { UpComingCard } from "@/components/Cards";
 import { SeeMore } from "@/components/Paginations";
 import axios from "axios";
+
 export default async function CategoryHome({
-  params: { category },
-  searchParams: { page },
+  params,
+  searchParams,
 }: {
-  params: { category: string };
-  searchParams: { page?: string };
+  params: Promise<{ category: string }>;
+  searchParams: Promise<{ page?: string }>;
 }) {
+  const { category } = await params;
+  const { page } = await searchParams;
+
   const movieDatas = async (category: string, page: number) => {
     await new Promise((resolve) => setTimeout(resolve, 2000));
 

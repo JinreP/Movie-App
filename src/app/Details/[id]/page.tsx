@@ -8,13 +8,15 @@ import { castType, crewType, initType } from "@/lib/type";
 
 import { moreLikeThis, movieAuthors, movieDatas } from "@/lib/Datas";
 import { MoreLikeThisMovies } from "@/components/Cards";
-export default async function MovieDetailsPage({
-  params: { id },
-}: {
-  params: { id: string };
-}) {
-  //Movie Details
 
+export default async function MovieDetailsPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+
+  //Movie Details
   const movieDetail = await movieDatas(id);
   console.log(movieDetail, " asdf");
   //Movie Authors

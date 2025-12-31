@@ -7,14 +7,14 @@ export function Title({
 }: {
   title: string;
   rating: number;
-  date: Date;
+  date: string;
   popularity: number;
 }) {
   return (
     <div className="flex justify-between gap-200">
       <div className="flex flex-col">
         <h1 className="text-2xl font-bold">{title}</h1>
-        <p className="text-gray-300">{date.toLocaleDateString()}</p>
+        <p className="text-gray-300">{new Date(date).toLocaleDateString()}</p>
       </div>
       <div className="flex flex-col">
         <p className="">Rating</p>
